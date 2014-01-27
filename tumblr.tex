@@ -1,0 +1,36 @@
+\documentclass[11pt]{amsart}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage[retainorgcmds]{IEEEtrantools}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{tumblr shit}
+\author{didigodot}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+%\section{}
+%\subsection{}
+\begin{enumerate}
+\item {$K=-\frac{1}{2}U_{g}$} \\
+         \begin{proof}
+         \begin{IEEEeqnarray*}{+rCl+x*}
+        K &=& \frac{1}{2}mv^{2} \\
+        &=& \frac{1}{2}m(\frac{2\pi r}{T})^{2}\\
+        &=& \frac{1}{2}m(\frac{2\pi r}{2\pi r \sqrt{\frac{r}{GM}}})^{2}\\
+        &=& \frac{1}{2}\frac{GMm}{r} \\
+        &=&-\frac{1}{2}(-\frac{GMm}{r})\\
+        &=& -\frac{1}{2}U_{g}
+        %U_{g} &=& $-\frac{GMm}{r}$
+         \end{IEEEeqnarray*}
+         \end{proof}
+      
+\item{$(r^{'}\times r^{''})\times r^{'}$}
+\end{enumerate}
+\end{document}  
