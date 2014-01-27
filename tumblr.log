@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.12.7)  26 JAN 2014 18:48
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.12.7)  27 JAN 2014 11:31
 entering extended mode
- \write18 enabled.
- file:line:error style messages enabled.
+ restricted \write18 enabled.
  %&-line parsing enabled.
 **tumblr.tex
 (./tumblr.tex
@@ -329,7 +328,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--23
 Here is how much of TeX's memory you used:
  3634 strings out of 493610
  49817 string characters out of 3142404
- 113733 words of memory out of 3000000
+ 114734 words of memory out of 3000000
  6741 multiletter control sequences out of 15000+200000
  11132 words of font info for 43 fonts, out of 3000000 for 9000
  992 hyphenation exceptions out of 8191
@@ -346,7 +345,7 @@ b></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
 </usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><
 /usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.p
 fb>
-Output written on tumblr.pdf (1 page, 91239 bytes).
+Output written on tumblr.pdf (1 page, 91390 bytes).
 PDF statistics:
  52 PDF objects out of 1000 (max. 8388607)
  37 compressed objects within 1 object stream
