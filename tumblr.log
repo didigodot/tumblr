@@ -1,6 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.12.7)  27 JAN 2014 11:31
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.12.7)  12 FEB 2014 12:16
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
 **tumblr.tex
 (./tumblr.tex
@@ -323,16 +324,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--23
 
  []
 
-[1{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+Underfull \vbox (badness 1648) has occurred while \output is active []
+
+ [1{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
 (./tumblr.aux) ) 
 Here is how much of TeX's memory you used:
  3634 strings out of 493610
  49817 string characters out of 3142404
- 114734 words of memory out of 3000000
+ 116733 words of memory out of 3000000
  6741 multiletter control sequences out of 15000+200000
  11132 words of font info for 43 fonts, out of 3000000 for 9000
  992 hyphenation exceptions out of 8191
- 42i,7n,26p,343b,217s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,7n,26p,343b,336s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmex10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/c
@@ -345,10 +349,10 @@ b></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
 </usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><
 /usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.p
 fb>
-Output written on tumblr.pdf (1 page, 91390 bytes).
+Output written on tumblr.pdf (2 pages, 101829 bytes).
 PDF statistics:
- 52 PDF objects out of 1000 (max. 8388607)
- 37 compressed objects within 1 object stream
+ 55 PDF objects out of 1000 (max. 8388607)
+ 39 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
