@@ -60,8 +60,8 @@
 
 \begin{document}
 \maketitle
-I'm going to develop a function D which maps square matrices to numbers.\\
-D must satisfy the following conditions:\\
+We will develop a function D which maps square matrices to numbers.\\
+D must satisfy the following conditions:
 \begin{enumerate}
 	\item $D(I_n)=1$. (Identity property)
 	\item If A has a zero row, $D(A)=0$. (Zero row property)
@@ -71,9 +71,17 @@ D must satisfy the following conditions:\\
 Comment on notation: $D(A)$ can also be written in terms of its row vectors: $D(r^{\mathsf{T}}_1,r^{\mathsf{T}}_2,\dots r^{\mathsf{T}}_n ).$\\ \\
 From these basic axioms we will develop the following theorems:
 \begin{enumerate}
-	\item If any row is a multiple of another, then D(A)=0. 
-	  		\begin{proof}
-		If $r^{\mathsf{T}}_i=cr^{\mathsf{T}}_j$, where $c$ is a constant, then $D(\dots, r^{\mathsf{T}}_i, \dots r^{\mathsf{T}}_j\dots)=D(\dots,cr^{\mathsf{T}}_j,\dots r^{\mathsf{T}}_j \dots)$
-		\end{proof}
+	\item If any row is a multiple of another, then $D(A)=0$. 
+	  		%\begin{proof}
+		%If $r^{\mathsf{T}}_i=cr^{\mathsf{T}}_j$, where $c$ is a constant, then $D(\dots, r^{\mathsf{T}}_i, \dots r^{\mathsf{T}}_j\dots)=D(\dots,cr^{\mathsf{T}}_j,\dots r^{\mathsf{T}}_j \dots)$
+		%\end{proof}
+	\item If the rows of A are linearly dependent, then $D(A) = 0$
+	\item D gives 0 if any column of A is all zeroes.
+	\item If any two rows of A are swapped, then $D(A)=-D(A)$. (Swap property)
+	\item $D(A)=0$ iff A is singular, i.e. not invertible (Singular property).
+	\item If A is upper or lower triangular, then $D(A)$ is the product of the diagonal elements. (Triangular property)
+	\item If A,B, and C are identical expect that row k of A is $a^{\mathsf{T}}$, row $k$ of $B$ is $b^{\mathsf{T}}$, and row $k$ of $C$ is $s^{\mathsf{T}}$ where $s=a+b$, then $D(C)=D(A)+D(B)$. (Multilinearity)
+	\item Define $M_{ij}$, the minor of $A$ at position $(i,j)$ to be the matrix obtained from $A$ by knocking out both row $i$ and column $j$ of $A$. \\If $a_{ij}$ is the only nonzero entry in either row $i$ or column $j$, then $D(A)=a_{ij}(-1)^{i+j}D(M_{ij})$. (Block property)
+	
 \end{enumerate}
 \end{document}
