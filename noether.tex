@@ -1,0 +1,199 @@
+
+\documentclass[11pt]{article}
+\usepackage{geometry} % see geometry.pdf on how to lay out the page. There's lots.
+\usepackage{amsthm}
+\usepackage{hyperref}
+\geometry{a4paper} % or letter or a5paper or ... etc
+% \geometry{landscape} % rotated page geometry
+
+% See the ``Article customise'' template for come common customisations
+
+\title{Noether's Theorem}
+\author{Didi Park}
+\date{2 May 2014}
+%%% BEGIN DOCUMENT
+\begin{document}
+
+\maketitle
+
+%%%%
+\section{Preliminaries}
+Noether's theorem, in a sentence, states that for every differentiable (infinitesimal) symmetry, there exists a corresponding conservation law. In order to fully understand this, we must understand what symmetry means. We will define symmetry in terms of extremals and invariance. 
+
+%%%%
+\section{Functionals}
+\subsubsection{Formal statement}
+A functional is a mapping from a set of functions to the real numbers, given by
+
+$$J = \int_a^b L(t,q_i,\dot{q}_i)dt.$$
+
+The domain of the mapping is the set of twice differentiable functions ${q(t)}$ on the closed interval $[a,b]$.
+
+The integrand of the functional, $L(t,q_i,\dot{q}_i)$, is called the \emph{Lagrangian} of the functional.
+
+Each $q_i$ represents a generalized coordinate; $i=1,2,\dots,N$.
+
+%%%%
+\section{Extremals}
+\subsection{Euler-Lagrange Equation}
+Given functional
+$$J = \int_a^b L(t,q_i,\dot{q}_i)dt,$$
+The $\{q_i(t)\}$ that make $J$ an extremal are the N solutions of the Euler-Lagrange equations
+$$\frac{\partial L}{\partial q_i}=\frac{d}{dt} \frac{\partial L}{\partial \dot{q_i}}.$$
+
+\subsection{Canonically Conjugate Momentum}
+The momentum canonically conjugate to $q_i$ is defined by 
+$$p_i \equiv \frac{\partial L}{\partial \dot{q_i}}.$$
+
+This allows us to rewrite the Euler-Lagrange equation as
+$$\frac{\partial L}{\partial q_i}=\dot{p_i},$$
+which leads to a conservation law!
+$p_i$ is conserved when $\frac{\partial L}{\partial q_i}=0.$
+Using the chain rule, we take the derivative of the Lagrangian with respect to time:
+$$\frac{dL}{dt}=\frac{\partial L}{\partial t}+\frac{\partial L}{\partial q_i}\dot{q_i}+\frac{\partial L}{\partial \dot{q_i}}\ddot{q_i}$$
+$$=\frac{\partial L}{\partial t}+\dot{p_i}\dot{q_i}+p_i\ddot{q_i}$$
+$$=\frac{d}{dt}[L-p_i\dot{q_i}].$$
+This leads to\dots
+
+\subsection{The Hamiltonian}
+$$H\equiv H(t,q_i,p_i)\equiv p_i \dot{q_i}-L$$
+The Hamiltonian is different from the Lagrangian in that it depends on the canonical momenta.\\
+It also has its own symmetry:
+$$H \textrm{ is constant  iff } \frac{\partial L}{\partial t}=0.$$ 
+It gives us two ways of writing the Euler-Lagrange equation:
+$$\frac{\partial L}{\partial t}=-\dot{H}$$
+$$\frac{\partial L}{\partial q_i}=\dot{p_i}.$$
+
+%%%%
+\section{Invariance}
+The functional 
+$$J=\int_a^b L(t,q^\mu, \dot{q}^\mu)dt$$
+is said to be invariant under the infinitesimal transformation
+$$ t'=t+\epsilon \tau+\dots,$$
+$$q_i'=q_i+\epsilon \zeta_i+\dots$$
+iff
+$$J'-J\sim \epsilon^s, \textrm{ where } s>1.$$
+\subsection{Rund-Trautman Identity}
+If the functional
+$$J = \int_a^b L(t,q_i,\dot{q}_i)dt,$$
+is invariant under the infinitesimal transformation
+$$t'=t+\epsilon \tau+\dots,$$
+$$q_i'=q_i+\epsilon\zeta_i+\dots,$$
+then
+$$\frac{\partial L}{\partial q_i}\zeta_i+p_i\dot{\zeta_i}+\frac{\partial L}{\partial t}\tau - H\dot{\tau}=0.$$
+Another equivalent form:
+$$-(\zeta_i-\dot{q_i}\tau)[\frac{\partial L}{\partial q_i}-\frac{d}{dt}\frac{\partial L}{\partial \dot{q_i}}]=\frac{d}{dt}[p_i\zeta_i-H\tau].$$
+%%%%
+\section{Statement of the theorem}
+If the functional
+
+$$J=\int_a^b L(t,q_i, \dot{q_i})dt$$
+is an extremal, and if under the infinitesimal transformation
+$$t'=t+\epsilon\tau+\dots,\\
+	q_i'=q_i+\epsilon\zeta_i+\dots
+$$
+the functional is invariant according to the definition
+$$L'\frac{dt'}{dt}-L=\epsilon\frac{dF}{dt}+O(\epsilon^s), \textrm{ where } s>1,$$
+then the following conservation law holds:
+$$p+\mu\zeta^\mu-H\tau-F=\textrm{const.}$$
+%If that's hard to grasp, here's an equivalent aphorism:\\\\
+%\emph{For every differentiable symmetry, there exists a corresponding conservation law.}
+\subsection{Cute proof}
+If J is an extremal, then the Euler-Lagrange equations hold:
+$$\frac{\partial L}{\partial t}=-\dot{H}$$
+$$\frac{\partial L}{\partial x_i}=\dot{p_i}.$$
+If J is also invariant, then the Euler-Lagrange equations, when substituted into the Rund-Trautman identity, make
+$$\frac{d}{dt}[p_i\zeta_i-H\tau-F]=0.$$
+Therefore,
+$$p_i\zeta_i-H\tau-F=\textrm{const.}$$
+
+\subsection{Simple proof}
+Suppose that the functional
+$$J = \int_{t_1}^{t_2} L(t,q_i,\dot{q}_i)dt.$$
+is perturbed by a symmetric, infinitesimal translation $q_i\rightarrow q_i+\epsilon f_i(q).$
+$$\delta A = \int_{t_1}^{t_2} \frac{\partial L}{\partial q_i}\delta{q_i}+\frac{\partial L}{\partial \dot{q_i} }\delta{\dot{q_i}}=0$$
+Integrating by parts, we get
+$$ = \int_{t_1}^{t_2} [\frac{\partial L}{\partial q_i} \delta q_i - \frac{d}{dt} \frac{\partial L}{\partial \dot{q_i}}\delta{q_i}] 
++\left. \frac{\partial L}{\partial \dot{q_i}} \right|_{t_1}^{t_2}  $$
+By the Euler-Lagrange equation, the integrand equals 0.
+$$=\left. \frac{\partial L}{\partial \dot{q_i}} \right|_{t_1}^{t_2}=0. $$
+This can be rewritten as
+$$=\frac{\partial L}{\partial q_i}\epsilon f_i(q) = p_i f_i(q)=0.$$
+This proof, being simpler, gives a different conserved quantity from the first proof, but equivalently shows that there exists a corresponding conservation law. We call the function $f_i(q)$ a Noether charge. 
+
+\subsection{Conservation of Energy}
+We translate a particle through time using the translation
+$$q(t)\rightarrow q(t-\epsilon)$$
+which implies
+$$\delta q(t)=-\frac{dq}{dt}\epsilon$$
+$$\delta q = -\dot{q}\epsilon$$
+We assume that it is a symmetry, so
+$$\delta L = 0$$
+$$=\int_{t_1}^{t_2} dq \frac{\partial L}{\partial q}(-\dot{q}\epsilon) + \frac{\partial L}{\partial q}\delta \dot{q} + A-B$$
+Integrating by parts, we obtain
+$$=\int_{t_1}^{t_2}  [\frac{\partial L}{\partial q}- \frac{d}{dt}\frac{\partial L}{\partial \dot{q}}]\delta q+ \left. \delta q \frac{\partial L}{\partial \dot{q}} \right|_{t_1}^{t_2}+A-B$$
+By the Euler-Lagrange equation,
+$$= \left. \delta q \frac{\partial L}{\partial \dot{q}} \right|_{t_1}^{t_2}+A-B$$
+$$=\left. -\epsilon \dot{q} \frac{\partial L}{\partial \dot{q}} \right|_{t_1}^{t_2}+A-B$$
+We know $A=L(t_2)\epsilon$ and $B=L(t_1)\epsilon,$ so 
+$$=\left. [L(t) -\epsilon \dot{q} \frac{\partial L}{\partial \dot{q}}] \right|_{t_1}^{t_2}.$$
+This is the conserved quantity, so we can simply negate it:
+$$=\left. [\epsilon \dot{x} \frac{\partial L}{\partial \dot{q}}-L(t)] \right|_{t_1}^{t_2}$$
+which is called the Hamiltonian $H$.
+It turns out that this equals energy.
+Setting $L(t)=K-U,$
+$$=\left. [\epsilon \dot{x}\dot{p}-\frac{1}{2}m\dot{x^2}+U(x)] \right|_{t_1}^{t_2}$$
+$$=\left. [m\dot{x^2}-\frac{1}{2}m\dot{x^2}+U(x)] \right|_{t_1}^{t_2}$$
+$$=\left. [\frac{1}{2}m\dot{x^2}+U(x)] \right|_{t_1}^{t_2}=0.$$
+Yay, energy is conserved!
+
+\subsection{Conservation of Linear Momentum}
+We translate a particle using the infinitesimal translation
+$$ \delta x = -\epsilon$$
+$$ \delta y = 0$$
+Assuming that this translation is a symmetry, we calculate the Noether charge:
+$$\epsilon f_x=-\epsilon \Rightarrow f_x=-1$$
+$$\epsilon f_y = 0 \Rightarrow f_y=0$$
+So the Noether charge (conserved quantity) is:
+$$p_x\textrm{ (linear momentum).}$$
+\subsection{Conservation of Angular Momentum}
+We rotate a particle about the origin using the infinitesimal translation
+$$ \delta x = -\epsilon y$$
+$$ \delta y = \epsilon x.$$
+Assuming that this translation is a symmetry, we calculate the Noether charge:
+$$\epsilon f_x=-\epsilon y \Rightarrow f_x=-y$$
+$$\epsilon f_y = \epsilon x \Rightarrow f_y=x$$
+So the Noether charge (conserved quantity) is:
+$$-p_xy+p_yx=L\textrm{ (angular momentum).}$$
+%%%%
+\section{Problems}
+\begin{enumerate}
+
+\item Derive Snell's law
+$$n_1sin(\theta_1)=n_2sin(\theta_2)$$
+ using the functional $T=\frac{1}{c}[n_1s_1+n_2s_2].$\\
+Hint: Fermat's principle states that the extremal path T must be a minimum.
+
+\item Consider the damped oscillator with Lagrangian
+$$L=[\frac{1}{2}m\dot{x^2}-\frac{1}{2}kx^2]e^{\frac{bt}{m}}.$$
+Apply the transformation
+$$t'=t+\epsilon\tau, x'=x+\epsilon\zeta\textrm{, where }\tau=1\textrm{ and }\zeta=\frac{-bx}{2m}.$$
+What is the corresponding conservation law?
+
+\item Consider the functional with Lagrangian $L=L(t,\dot{x})=t\dot{x^2}.$
+\begin{enumerate}
+\item Find the canonical momentum and the Hamiltonian.
+\item Using $\tau=At$ and $\zeta=x_0$, find the corresponding conservation law.
+\end{enumerate}
+\end{enumerate}
+
+%%%%
+\section{Further reading/Works Cited}
+\begin{enumerate}
+\item Baez, John. \url{http://math.ucr.edu/home/baez/noether.html}.
+\item Neuenschwander, Dwight E. (2010). \emph{Emmy Noether's Wonderful Theorem}.
+\item Susskind, Leoncard. \url{https://www.youtube.com/watch?v=FZDy_Dccv4s}
+\item Thompson, Rob. \url{http://www.math.umn.edu/~robt/noethertalk.pdf}
+\item Wikipedia. \url{http://en.wikipedia.org/wiki/Noether%27s_theorem}
+\end{enumerate}
+\end{document}

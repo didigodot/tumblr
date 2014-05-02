@@ -1,0 +1,599 @@
+
+<!-- saved from url=(0051)http://www.mathpages.com/home/kmath564/kmath564.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="Generator" content="Microsoft Word 10 (filtered)">
+<title>Noether's Theorem</title>
+
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+</head>
+
+<body lang="EN-US" link="blue" vlink="purple">
+
+<div class="Section1">
+
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse">
+ <tbody><tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal"><b><span style="font-size:16.0pt">Noether’s Theorem</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:16.0pt"><img width="135" height="195" src="./Noether's Theorem_files/image001.jpg"></span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">The behavior of a physical system can often be expressed
+  very elegantly in terms of a specific function, called the Lagrangian, of the
+  system variables.&nbsp; The system follows a path through phase space such that the
+  integral of the Lagrangian is stationary.&nbsp; (For more on this, see <a href="http://www.mathpages.com/home/kmath523/kmath523.htm">Lagrangian and Hamiltonian Mechanics</a>.)&nbsp; For
+  a simple system with Lagrangian L of the variables q and <sub><img border="0" width="13" height="21" src="./Noether's Theorem_files/image002.gif"></sub>&nbsp;= dq/dt the
+  equation of motion is</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="104" height="48" src="./Noether's Theorem_files/image003.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal"><br>
+  This equation signifies that if the quantity on the right hand side is zero
+  (meaning L is symmetrical over q), then the rate of change of the quantity in
+  parentheses on the left side is also zero, so it is a conserved quantity.&nbsp; The
+  same applies to more complicated systems; in general any symmetry of the
+  Lagrangian corresponds to a conserved quantity, and vice versa.&nbsp; Despite the
+  fact that the Euler-Lagrange equation is essentially an explicit statement of
+  this proposition, it seems not to have been discussed and formalized as a
+  theorem until 1915, by Emmy Noether (1882-1935), so it is now called
+  Noether’s Theorem.&nbsp; As an example, the classical Lagrangian of a free
+  particle of mass m is simply L = (1/2)m<sub><img border="0" width="13" height="17" src="./Noether's Theorem_files/image004.gif"></sub><sup>2</sup>, which depends only on<sub><img border="0" width="13" height="17" src="./Noether's Theorem_files/image004.gif"></sub>, not on
+  x, so we have dL/dx = 0, and it follows that <sub><img border="0" width="95" height="21" src="./Noether's Theorem_files/image005.gif"></sub>&nbsp;is constant, i.e.,
+  momentum is conserved.<br>
+  <br>
+  More generally, consider a system with n coordinates q<sub>1</sub>, q<sub>2</sub>,
+  ..., q<sub>n</sub>.&nbsp; The Lagrangian L is a function of all n variables and
+  their first derivatives with respect to time.&nbsp; The equations of motion
+  are the n Euler equations, one for each of the variables.&nbsp; The total differential
+  of L with respect to the coordinates q<sub>i</sub> is</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="105" height="53" src="./Noether's Theorem_files/image006.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">Multiplying each of the n Euler equations by the
+  respective differential dq<sub>i</sub> and adding them together, we get</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="163" height="56" src="./Noether's Theorem_files/image007.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">Thus for any combination of differentials dq<sub>i</sub> such
+  that dL = 0, the summation on the left hand side is a constant, i.e., a
+  conserved quantity.&nbsp; Of course, only the proportions between the
+  differentials are significant, not their individual absolute values.&nbsp; Each
+  set of coordinate differential proportions represents a direction in the
+  coordinate space.&nbsp; Letting <span style="font-family:Symbol">s</span> denote a
+  path parameter along a given curve q<sub>i</sub>(<span style="font-family:
+  Symbol">s</span>) in coordinate space, we can divide through the above
+  expression by d<span style="font-family:Symbol">s</span> to give in terms of
+  derivatives instead of differentials the formulation </p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="168" height="56" src="./Noether's Theorem_files/image008.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">To illustrate, consider a set of N particles with masses m<sub>j</sub>
+  and positions x<sub>i</sub>, y<sub>i</sub>, z<sub>i</sub> for i = 1 to N,
+  with a potential energy that depends only on the pair-wise distances between
+  the particles.&nbsp; Clearly that the Lagrangian is unaffected by any fixed
+  displacement of the system, i.e., it is constant along any curve (in phase
+  space) of the form x<sub>i</sub>(<span style="font-family:Symbol">s</span>) =
+  k<sub>x</sub><span style="font-family:Symbol">s</span>, y<sub>i</sub>(<span style="font-family:Symbol">s</span>) = k<sub>y</sub><span style="font-family:
+  Symbol">s</span>, z<sub>i</sub>(<span style="font-family:Symbol">s</span>) = k<sub>z</sub><span style="font-family:Symbol">s</span> for any constants k<sub>x</sub>, k<sub>y</sub>,
+  k<sub>z</sub>.&nbsp; Thus Noether’s Theorem implies</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="339" height="53" src="./Noether's Theorem_files/image009.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">Since the constants k<sub>x</sub>, k<sub>y</sub>, k<sub>z</sub>
+  are arbitrary, it follows that each summation is individually a constant,
+  meaning that momentum is conserved in each of the three coordinate
+  directions, and therefore in every spatial direction.&nbsp; For the same set of
+  particles we could also consider the invariance of the Lagrangian under a
+  fixed rotation (i.e., a re-orientation) of the system about the origin.&nbsp; For
+  each mass with coordinates x,y,z a fixed rotation about the z axis preserves
+  the quantity x<sup>2</sup> + y<sup>2</sup> for each point, from which we get
+  xdx + ydy = 0.&nbsp; Thus we can represent the differentials for this symmetry by
+  dx<sub>i</sub> = d<span style="font-family:Symbol">s</span> y<sub>i</sub> , dy<sub>i</sub>
+  = <span style="font-family:Symbol">-</span>d<span style="font-family:Symbol">s</span>
+  x<sub>i</sub> , &nbsp;and dz<sub>i</sub> = 0, so by Noether’s Theorem we have the
+  conserved quantity</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="204" height="53" src="./Noether's Theorem_files/image010.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">This expresses the general conservation of angular
+  momentum about the z axis, and in the same way we can show that the physical
+  symmetry under re-orientations about the x or y axes implies conservation of
+  angular momentum about those axes as well.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">In addition to symmetry with respect to spatial
+  displacement and orientation, another important symmetry of all known
+  physical laws is with displacements in time.&nbsp;&nbsp; In this case too the Euler
+  equations identify a conserved quantity.&nbsp; Assuming the Lagrangian L is not an
+  explicit function of time (although the system variables may be), we have the
+  total derivative</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="192" height="53" src="./Noether's Theorem_files/image011.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">The Euler equations for the system enable us to substitute
+  for the partials of L with respect to q<sub>i</sub> on the right hand side,
+  and we can express dq<sub>i</sub>/dt in dot notation, so we have</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="236" height="53" src="./Noether's Theorem_files/image012.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">Noting that the summand is the derivative with respect to
+  time of a single product, this can also be written as</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="160" height="56" src="./Noether's Theorem_files/image013.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">Thus the quantity in square brackets is constant.&nbsp; As an
+  illustration, consider the mass-spring system shown below.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><img width="379" height="138" src="./Noether's Theorem_files/image014.gif"></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">This system has the usual Lagrangian given by kinetic
+  energy T minus potential energy V</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="495" height="75" src="./Noether's Theorem_files/image015.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">We have</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="280" height="53" src="./Noether's Theorem_files/image016.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">Since L = T – V the conserved quantity corresponding to
+  time symmetry is</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="253" height="27" src="./Noether's Theorem_files/image017.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">is the total energy of the system.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">For as more formal proof of Noether’s Theorem, and to show
+  how naturally it appears in the derivation of the Euler-Lagrange equation
+  itself, suppose x<sub>1</sub>, x<sub>2</sub>,…, x<sub>n</sub> are the
+  dynamical variables describing the physical state of a system, and each of
+  them is a function of the time t, and suppose the Lagrangian of the system is
+  L(x<sub>1</sub>,x<sub>2</sub>,…,x<sub>n</sub>).&nbsp; The usual way of deriving
+  the equations of motion is to consider a set of perturbed variables</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="159" height="27" src="./Noether's Theorem_files/image018.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">where the functions <span style="font-family:Symbol">d</span><sub>i</sub>(t)
+  are arbitrary variations, and then determine the conditions that must be
+  satisfied in order for the integral of Ldt to be stationary, meaning that the
+  integral is unaffected by an incremental value of the variational parameter <span style="font-family:Symbol">e</span>.&nbsp; To do this we differentiate the
+  integral with respect to <span style="font-family:Symbol">e</span> as follows</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="324" height="67" src="./Noether's Theorem_files/image019.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">Setting this to zero when <span style="font-family:Symbol">e</span>
+  = 0 and therefore X<sub>i</sub> = x<sub>i</sub>, and substituting for the
+  partials with respect to <span style="font-family:Symbol">e</span>, gives the
+  condition</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="211" height="63" src="./Noether's Theorem_files/image020.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">The second term in each summand can be integrated by parts
+  as</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="309" height="63" src="./Noether's Theorem_files/image021.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">so the preceding equation can be written in the form</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="487" height="67" src="./Noether's Theorem_files/image022.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">At this point we usually focus on disturbing functions
+  that equal zero at the endpoints of the interval from t<sub>1</sub> to t<sub>2</sub>,
+  in which case the first term in the above expression is identically zero, and
+  we just need to ensure that the integral vanishes.&nbsp; Since the <span style="font-family:Symbol">d</span><sub>i</sub> functions are independent and
+  arbitrary (between the end points), this requires that each of the summands
+  individually must vanish, so we arrive at the Euler-Lagrange equations of
+  motion</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="235" height="45" src="./Noether's Theorem_files/image023.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">However, Noether made the interesting observation that
+  equation (1) applies to arbitrary disturbing functions, not just those that
+  vanish at the endpoints, provided the function L is unaffected by the
+  disturbances.&nbsp; Furthermore, if the system is evolving in accord with the
+  equations of motion, the integral in (1) vanishes, and the remaining equation
+  implies that the value of the summation is unchanged from t<sub>1</sub> to t<sub>2</sub>,
+  so we have the conserved quantity</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="143" height="53" src="./Noether's Theorem_files/image024.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">Noether was primarily an algebraicist (as was her father,
+  Max Noether), but in 1915 she was asked by David Hilbert for help in trying
+  to understand the status of energy conservation in general relativity.&nbsp; As
+  we’ve seen, the conservation of energy in classical physics is closely
+  related to the time-invariance of physical laws, but in general relativity
+  there is not necessarily a global time coordinate, so the classical
+  invariance cannot be invoked to establish the conservation of energy.&nbsp;
+  Nevertheless, if spacetime in the region of interest is regarded as
+  asymptotically flat, it is possible to define a conserved energy. &nbsp;This
+  important aspect of general relativity was greatly clarified by Noether’s
+  Theorem.&nbsp; Subsequently the theorem has found important applications in many
+  branches of physics.&nbsp; For example, in quantum mechanics the phase of the wave
+  function can be incremented without affecting any observables, and this
+  “gauge symmetry” corresponds to the conservation of electric charge.&nbsp; Moreover,
+  Noether’s approach of identifying symmetries with conserved quantities forms
+  the basis of the Standard Model of particle physics.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal"><a href="http://www.mathpages.com/home/index.htm">Return to MathPages Main Menu</a></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal">&nbsp;</p>
+
+</div>
+
+
+
+
+</body></html>

@@ -1,0 +1,120 @@
+
+<!-- saved from url=(0042)http://math.ucr.edu/home/baez/noether.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title> Noether </title>
+</head><body><h2> Noether's Theorem in a Nutshell </h2>
+<h4> John Baez </h4>
+<h4> March 12, 2002 </h4>
+
+<p>
+Noether's theorem is an amazing result which lets physicists get
+conserved quantities from symmetries of the laws of nature.  Time
+translation symmetry gives conservation of energy; space translation
+symmetry gives conservation of momentum; rotation symmetry gives
+conservation of angular momentum, and so on.
+</p><p>
+
+This result, proved in 1915 by <a href="http://www-groups.dcs.st-and.ac.uk/~history/Mathematicians/Noether_Emmy.html">Emmy Noether</a> shortly after she first
+arrived in Goettingen, was praised by Einstein as a piece of "penetrating
+mathematical thinking".  It's now a standard workhorse in theoretical
+physics.  
+
+</p><p>
+These days, students often first meet this theorem in a course on
+quantum field theory.  That can make it seem more complicated than it
+really is.  It works for classical field theory, not just quantum field
+theory.  And it also works for the classical mechanics of a point
+particle!  The proof looks a lot easier in this context - but it
+contains all the basic ideas which show up in the more fancy versions.
+</p><p>
+
+Of course the proof uses Lagrangians, but a proof can't help using the
+concepts which the theorem is about.  In other words: if someone
+claims Noether's theorem says "every symmetry gives a conserved
+quantity", they are telling a half-truth.  The theorem only applies to
+certain classes of theories.  In its original version it applies
+to theories described by a Lagrangian, and the Lagrangian
+formalism does most of the work in proving the theorem.  There is also a
+version which applies to theories described by a Hamiltonian.  Luckily,
+almost all the theories studied in physics are described by both a 
+Lagrangian <em>and</em> a Hamiltonian.
+But let's just do the following simple special case:
+
+</p><p>
+Suppose we have a particle moving on a line with Lagrangian L(q,q'),
+where q is its position and q' = dq/dt is its velocity.  (I'll 
+always use the symbol ' to stand for time derivatives.)  
+</p><p>
+The momentum of our particle is defined to be
+</p><pre>p = dL/dq'
+</pre>
+The force on it is defined to be
+<pre>F = dL/dq
+</pre>
+The equations of motion - the so-called Euler-Lagrange equations -
+say that the rate of change of momentum equals the force:
+<pre>p' = F
+</pre>
+That's how Lagrangians work!  
+<p>
+Next, suppose the Lagrangian L has a symmetry, meaning that it doesn't
+change when you apply some one-parameter family of transformations
+sending q to some new position q(s).  This means that
+</p><pre>d/ds L(q(s), q'(s)) = 0.
+</pre>
+Then I claim that
+<pre>C = p dq(s)/ds
+</pre>
+is a conserved quantity: that is,
+<pre>C' = 0.
+</pre>
+<strong>Proof</strong> - Take the time derivative of our supposed conserved
+quantity using the product rule:
+<pre>C' = p' dq(s)/ds + p dq'(s)/ds
+</pre>
+Next, use the equation of motion of our particle and the definition
+of momentum to rewrite the p' and p terms in this equation:
+<pre>C' = dL/dq dq(s)/ds + dL/dq' dq'(s)/ds
+</pre>
+Finally, use the chain rule to recognize that the right side of this
+equation is 
+<pre>d/ds L(q(s), q'(s)) = 0!
+</pre>
+<strong>QED.</strong>
+<p>
+Of course there's nothing special about the particle being on a <em>line</em>.
+It's easy to generalize to a particle or bunch of particles in
+higher-dimensional Euclidean space or even a manifold.  It's also
+easy to generalize to field theories.  The idea is always the same.
+</p><p>
+Experts will note that the above simplified version assumes our
+symmetry is time-independent: that's how I could slip the time derivative
+past the derivative with respect to s, when going from 
+</p><pre>(dq(s)/ds)'
+</pre>
+to 
+<pre>dq'(s)/ds
+</pre>
+Of course, like any good magician, I did this step so quickly that
+you might not have noticed it!  However, it's an important step, and
+to handle time-dependent symmetries, we need a somewhat fancier
+version of Noether's theorem.  A simple example comes when you consider
+the conserved quantities associated to Lorentz transformations!  But
+that's <a href="http://math.ucr.edu/home/baez/boosts.html">another story</a>.
+
+<p>
+For more on Emmy Noether and her theorem, try <a href="http://en.wikipedia.org/wiki/Noether's_theorem">this Wikipedia
+article</a>.  By the way,
+Emmy Noether proved a lot of other cool theorems and introduced a lot
+of important ideas into mathematics, especially group theory
+and ring theory.
+
+</p><p> </p><hr>
+© 2002  John Baez<br>
+baez@math.removethis.ucr.andthis.edu
+<h3><a href="http://math.ucr.edu/home/baez/README.html">home</a></h3>
+
+
+
+
+
+</body></html>
