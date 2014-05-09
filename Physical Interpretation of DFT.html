@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- saved from url=(0064)http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node17.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Physical Interpretation of DFT</title>
+<meta name="description" content="Physical Interpretation of DFT">
+<meta name="keywords" content="signalsystem">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2002-2-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/signalsystem.css">
+
+<link rel="next" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node18.html">
+<link rel="previous" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node16.html">
+<link rel="up" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node15.html">
+<link rel="next" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node18.html">
+</head>
+
+<body>
+<!--Navigation Panel-->
+<a name="tex2html206" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node18.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="file:///sw/share/lib/latex2html/icons/next.png"></a> 
+<a name="tex2html204" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node15.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="file:///sw/share/lib/latex2html/icons/up.png"></a> 
+<a name="tex2html198" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node16.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="file:///sw/share/lib/latex2html/icons/prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html207" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node18.html">DFT Examples</a>
+<b> Up:</b> <a name="tex2html205" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node15.html">Discrete Fourier transform (DFT)</a>
+<b> Previous:</b> <a name="tex2html199" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node16.html">DFT Formulation</a>
+<br>
+<br>
+<!--End of Navigation Panel-->
+
+<h2><a name="SECTION00042000000000000000">
+Physical Interpretation of DFT</a>
+</h2>
+
+<p>
+Computationally, given <img width="22" height="16" align="BOTTOM" border="0" src="./Physical Interpretation of DFT_files/img397.png" alt="$N$"> values <img width="42" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img455.png" alt="$x[m]$"> (<!-- MATH
+ $m=0,\cdots,N-1$
+ -->
+<img width="147" height="35" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img456.png" alt="$m=0,\cdots,N-1$">), any DFT code 
+can generate <img width="22" height="16" align="BOTTOM" border="0" src="./Physical Interpretation of DFT_files/img397.png" alt="$N$"> complex values <img width="43" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img432.png" alt="$X[n]$"> (<!-- MATH
+ $n=0,\cdots,N-1$
+ -->
+<img width="142" height="35" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img428.png" alt="$n=0,\cdots,N-1$">). But how should
+these <img width="22" height="16" align="BOTTOM" border="0" src="./Physical Interpretation of DFT_files/img397.png" alt="$N$"> values interpreted? What does each of them mean specifically? How
+should they be manipulated to achieve certain data processing goals such as 
+filtering? We will address these issues here.
+
+</p><p>
+In reality, a time signal <img width="112" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img457.png" alt="$x[m]=x_r[m]$"> is real (<img width="83" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img458.png" alt="$x_j[m]=0$">), and it can 
+be expanded as:
+<br>
+</p><div align="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+x[m]&=&x_r[m]=Re[\frac{1}{\sqrt{N}}\sum_{n=0}^{N-1}X[n]e^{j2\pi mn/N}] 
+  \nonumber \\
+  &=&\frac{1}{\sqrt{N}}\sum_{n=0}^{N-1}[X_r[n]\cos(2\pi mn/N)-X_j[n]\sin(2\pi mn/N)]
+  \nonumber \\
+  &=&\frac{1}{\sqrt{N}}\sum_{n=0}^{N-1}|X[n]|\cos(2\pi mn/N+\angle X[n])
+  \nonumber
+\end{eqnarray}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="42" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img415.png" alt="$\displaystyle x[m]$"></td>
+<td align="CENTER" nowrap=""><img width="19" height="33" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img24.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="288" height="72" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img459.png" alt="$\displaystyle x_r[m]=Re[\frac{1}{\sqrt{N}}\sum_{n=0}^{N-1}X[n]e^{j2\pi mn/N}]$"></td>
+<td width="10" align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT">&nbsp;</td>
+<td align="CENTER" nowrap=""><img width="19" height="33" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img24.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="426" height="72" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img460.png" alt="$\displaystyle \frac{1}{\sqrt{N}}\sum_{n=0}^{N-1}[X_r[n]\cos(2\pi mn/N)-X_j[n]\sin(2\pi mn/N)]$"></td>
+<td width="10" align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT">&nbsp;</td>
+<td align="CENTER" nowrap=""><img width="19" height="33" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img24.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="315" height="72" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img461.png" alt="$\displaystyle \frac{1}{\sqrt{N}}\sum_{n=0}^{N-1}\vert X[n]\vert\cos(2\pi mn/N+\angle X[n])$"></td>
+<td width="10" align="RIGHT">
+&nbsp;</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+where 
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\left\{ \begin{array}{l}
+    |X[n]|=\sqrt{X_r^2[n]+X_j^2[n]} \\
+    \angle X[n]=\tan^{-1}(X_j[n]/X_r[n]) 
+  \end{array} \right.,\;\;\;\;\;\;
+  \left\{ \begin{array}{l}
+    X_r[n]=|X[n]|\cos\angle X[n] \\
+    X_j[n]=|X[n]|\sin\angle X[n]
+  \end{array} \right.
+\end{displaymath}
+ -->
+
+<img width="522" height="59" border="0" src="./Physical Interpretation of DFT_files/img462.png" alt="\begin{displaymath}
+\left\{ \begin{array}{l}
+\vert X[n]\vert=\sqrt{X_r^2[n]+X_...
+...
+X_j[n]=\vert X[n]\vert\sin\angle X[n]
+\end{array} \right.
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+As both <img width="43" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img432.png" alt="$X[n]$"> and <!-- MATH
+ $\cos(2\pi mn/N)$
+ -->
+<img width="118" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img463.png" alt="$\cos(2\pi mn/N)$"> are periodic with period <img width="22" height="16" align="BOTTOM" border="0" src="./Physical Interpretation of DFT_files/img397.png" alt="$N$">, the summation 
+above can be changed to be from <img width="86" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img464.png" alt="$-N/2+1$"> to <img width="39" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img465.png" alt="$N/2$">:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x[m]=\frac{1}{\sqrt{N}}\sum_{n=-N/2}^{N/2-1}|X[n]|\cos(2\pi mn/N+\angle X[n])
+\end{displaymath}
+ -->
+
+<img width="394" height="65" border="0" src="./Physical Interpretation of DFT_files/img466.png" alt="\begin{displaymath}
+x[m]=\frac{1}{\sqrt{N}}\sum_{n=-N/2}^{N/2-1}\vert X[n]\vert\cos(2\pi mn/N+\angle X[n])
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+Consider the different types of terms in this summation:
+
+<ul>
+<li><img width="50" height="19" align="BOTTOM" border="0" src="./Physical Interpretation of DFT_files/img467.png" alt="$n=0$">: 
+
+<p>
+<img width="41" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img468.png" alt="$X[0]$"> is the DC component, which is real (zero phase);
+</p></li>
+<li><img width="75" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img469.png" alt="$n=N/2$">: 
+
+<p>
+<img width="66" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img470.png" alt="$X[N/2]$"> is the coefficient for the highest frequency
+  component <!-- MATH
+ $\cos(m\pi)=(-1)^m$
+ -->
+<img width="148" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img471.png" alt="$\cos(m\pi)=(-1)^m$">, which is real without phase shift;
+</p></li>
+<li><!-- MATH
+ $n=1,\cdots,N/2-1$
+ -->
+<img width="159" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img472.png" alt="$n=1,\cdots,N/2-1$">: 
+
+<p>
+These are <img width="87" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img473.png" alt="$(N-2)/2$"> sinusoids 
+  <!-- MATH
+ $|X[n]|\cos(2\pi mn/N+\angle X[n])$
+ -->
+<img width="242" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img474.png" alt="$\vert X[n]\vert\cos(2\pi mn/N+\angle X[n])$"> with frequency <img width="16" height="19" align="BOTTOM" border="0" src="./Physical Interpretation of DFT_files/img3.png" alt="$n$">, amplitude <img width="54" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img475.png" alt="$\vert X[n]\vert$">
+  and phase shift <img width="54" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img476.png" alt="$\angle X[n]$">;
+</p></li>
+<li><!-- MATH
+ $n=-N/2+1,\cdots,-1$
+ -->
+<img width="189" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img477.png" alt="$n=-N/2+1,\cdots,-1$">: 
+
+<p>
+This range for index <img width="16" height="19" align="BOTTOM" border="0" src="./Physical Interpretation of DFT_files/img3.png" alt="$n$"> is equivalent to a range <!-- MATH
+ $(1,\cdots,N/2-1)$
+ -->
+<img width="137" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img478.png" alt="$(1,\cdots,N/2-1)$"> for
+  index <img width="31" height="33" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img479.png" alt="$-n$">, and, as <!-- MATH
+ $X_r[-n]=X_r[n]$
+ -->
+<img width="133" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img480.png" alt="$X_r[-n]=X_r[n]$"> is even and <!-- MATH
+ $X_j[-n]=-X_j[n]$
+ -->
+<img width="148" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img481.png" alt="$X_j[-n]=-X_j[n]$"> is odd, 
+  we know <!-- MATH
+ $|X[-n]|=|X[n]|$
+ -->
+<img width="143" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img482.png" alt="$\vert X[-n]\vert=\vert X[n]\vert$"> is even and <!-- MATH
+ $\angle X[-n]=\angle X[n]$
+ -->
+<img width="143" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img483.png" alt="$\angle X[-n]=\angle X[n]$"> is odd.
+  Now each term in this range becomes identical to a corresponding term in the
+  previous range <!-- MATH
+ $n=1,\cdots,N/2-1$
+ -->
+<img width="159" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img472.png" alt="$n=1,\cdots,N/2-1$">:
+  <br>
+</p><div align="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+&&|X[-n]|\cos(-2\pi mn/N+\angle X[-n])=|X[n]|\cos(-2\pi mn/N-\angle X[-n])
+    \nonumber \\
+    &=&|X[n]|\cos(2\pi mn/N+\angle X[n]),\;\;\;\;(n=1,\cdots,N/2-1)
+    \nonumber
+\end{eqnarray}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE"><td nowrap="" align="RIGHT">&nbsp;</td>
+<td>&nbsp;</td>
+<td align="LEFT" nowrap=""><img width="576" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img484.png" alt="$\displaystyle \vert X[-n]\vert\cos(-2\pi mn/N+\angle X[-n])=\vert X[n]\vert\cos(-2\pi mn/N-\angle X[-n])$"></td>
+<td width="10" align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT">&nbsp;</td>
+<td align="CENTER" nowrap=""><img width="19" height="33" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img24.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="441" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img485.png" alt="$\displaystyle \vert X[n]\vert\cos(2\pi mn/N+\angle X[n]),\;\;\;\;(n=1,\cdots,N/2-1)$"></td>
+<td width="10" align="RIGHT">
+&nbsp;</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+</li>
+</ul>
+Now the real signal <img width="42" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img455.png" alt="$x[m]$"> can be expanded as:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x[m]=\frac{1}{\sqrt{N}}[X[0]+2\sum_{n=1}^{N/2-1} 
+  |X[n]|\cos(2\pi mn/N+\angle X[n])+X[N/2]\cos(m\pi)]
+\end{displaymath}
+ -->
+
+<img width="591" height="61" border="0" src="./Physical Interpretation of DFT_files/img486.png" alt="\begin{displaymath}
+x[m]=\frac{1}{\sqrt{N}}[X[0]+2\sum_{n=1}^{N/2-1} \vert X[n]\vert\cos(2\pi mn/N+\angle X[n])
++X[N/2]\cos(m\pi)]
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+
+<p>
+In general, the <img width="22" height="16" align="BOTTOM" border="0" src="./Physical Interpretation of DFT_files/img397.png" alt="$N$"> complex coefficients generated by any DFT code (e.g., 
+Matlab, C-code) are indexed from <img width="14" height="19" align="BOTTOM" border="0" src="./Physical Interpretation of DFT_files/img215.png" alt="$0$"> to <img width="54" height="35" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img408.png" alt="$N-1$"> (or sometimes from <img width="14" height="19" align="BOTTOM" border="0" src="./Physical Interpretation of DFT_files/img487.png" alt="$1$"> to <img width="22" height="16" align="BOTTOM" border="0" src="./Physical Interpretation of DFT_files/img397.png" alt="$N$">), 
+with the DC component <img width="41" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img468.png" alt="$X[0]$"> at the front end and the coefficient <img width="66" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img470.png" alt="$X[N/2]$">
+for the highest frequency component in the middle. On the other hand, it is
+conventional conceptually for the DC component to be in the middle, i.e., the 
+coefficients are indexed from <img width="54" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img447.png" alt="$-N/2$"> to <img width="71" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img448.png" alt="$N/2-1$">. To convert the actual output
+of a DFT code to fit this convention, one could rearrange the <img width="22" height="16" align="BOTTOM" border="0" src="./Physical Interpretation of DFT_files/img397.png" alt="$N$"> output data
+points in frequency domain so that they are shifted by <img width="39" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img465.png" alt="$N/2$">. Alternatively, 
+according to the frequency shift property of the Fourier transform, if we 
+multiply each data point <img width="42" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img455.png" alt="$x[m]$"> in time domain by 
+<!-- MATH
+ $e^{(j2\pi m N/2)/N}=e^{jm\pi}=(-1)^m$
+ -->
+<img width="238" height="43" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img488.png" alt="$e^{(j2\pi m N/2)/N}=e^{jm\pi}=(-1)^m$">, i.e., negate the sign of every other 
+time sample, the corresponding spectrum in frequency domain will be shifted
+by <img width="39" height="37" align="MIDDLE" border="0" src="./Physical Interpretation of DFT_files/img465.png" alt="$N/2$">.
+
+</p><p>
+</p><hr>
+<!--Navigation Panel-->
+<a name="tex2html206" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node18.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="file:///sw/share/lib/latex2html/icons/next.png"></a> 
+<a name="tex2html204" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node15.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="file:///sw/share/lib/latex2html/icons/up.png"></a> 
+<a name="tex2html198" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node16.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="file:///sw/share/lib/latex2html/icons/prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html207" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node18.html">DFT Examples</a>
+<b> Up:</b> <a name="tex2html205" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node15.html">Discrete Fourier transform (DFT)</a>
+<b> Previous:</b> <a name="tex2html199" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node16.html">DFT Formulation</a>
+<!--End of Navigation Panel-->
+<address>
+Ruye Wang
+2009-01-04
+</address>
+
+
+</body></html>

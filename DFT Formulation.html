@@ -1,0 +1,607 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- saved from url=(0064)http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node16.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>DFT Formulation</title>
+<meta name="description" content="DFT Formulation">
+<meta name="keywords" content="signalsystem">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2002-2-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/signalsystem.css">
+
+<link rel="next" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node17.html">
+<link rel="previous" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node15.html">
+<link rel="up" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node15.html">
+<link rel="next" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node17.html">
+</head>
+
+<body>
+<!--Navigation Panel-->
+<a name="tex2html196" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node17.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="file:///sw/share/lib/latex2html/icons/next.png"></a> 
+<a name="tex2html194" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node15.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="file:///sw/share/lib/latex2html/icons/up.png"></a> 
+<a name="tex2html188" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node15.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="file:///sw/share/lib/latex2html/icons/prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html197" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node17.html">Physical Interpretation of DFT</a>
+<b> Up:</b> <a name="tex2html195" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node15.html">Discrete Fourier transform (DFT)</a>
+<b> Previous:</b> <a name="tex2html189" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node15.html">Discrete Fourier transform (DFT)</a>
+<br>
+<br>
+<!--End of Navigation Panel-->
+
+<h2><a name="SECTION00041000000000000000">
+DFT Formulation</a>
+</h2>
+
+<p>
+Most time signals in practice are continuous and non-periodic, and their
+analytical expressions are not available in general. The spectrum of such a 
+non-periodic and continuous signal can only be obtained numerically by a
+digital computer. To do so, the signal needs to be modified in two ways:
+
+</p><ul>
+<li>First, we need to truncate the signal so that it has a finite time 
+  duration from 0 to <img width="18" height="16" align="BOTTOM" border="0" src="./DFT Formulation_files/img42.png" alt="$T$">, with the underlying assumption that the signal
+  repeats itself outside the interval <img width="85" height="35" align="MIDDLE" border="0" src="./DFT Formulation_files/img213.png" alt="$0&lt;t&lt;T$">, i.e., it becomes a periodic 
+  with period <img width="18" height="16" align="BOTTOM" border="0" src="./DFT Formulation_files/img42.png" alt="$T$">. Correspondingly, its spectrum becomes discrete. The
+  Fourier transform of this periodic signal is the Fourier expansion 
+  discussed before
+</li>
+<li>Second, we need to sample the signal with some sampling frequency 
+  <img width="19" height="16" align="BOTTOM" border="0" src="./DFT Formulation_files/img394.png" alt="$F$"> so that it becomes discrete to be processed by a digital computer. 
+  Correspondingly, the spectrum of the signal becomes periodic.
+</li>
+</ul>
+The order can be reversed so that the continuous signal is sampled first and
+then truncated. In either case, only when the signal is both finite and 
+discrete, can we apply the <em>discrete Fourier transform (DFT)</em> to find 
+its spectrum, which is also discrete and finite. 
+
+<p>
+<img align="BOTTOM" border="0" src="./DFT Formulation_files/discretization.gif" alt="discretization.gif">
+
+</p><p>
+The Fourier expansion of such a truncated continuous signal <img width="37" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img41.png" alt="$x(t)$"> (<img width="85" height="35" align="MIDDLE" border="0" src="./DFT Formulation_files/img213.png" alt="$0&lt;t&lt;T$">)
+can be carried out if it is assumed to be periodic <img width="130" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img44.png" alt="$x(t+T)=x(t)$"> (repeating
+itself beyond <img width="18" height="16" align="BOTTOM" border="0" src="./DFT Formulation_files/img42.png" alt="$T$">). If the signal is further sampled at a sampling frequency
+<img width="80" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img395.png" alt="$F=1/\triangle$"> so that there are <img width="83" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img396.png" alt="$N=T/t_0$"> samples in each period, it can be 
+approximated by the <img width="22" height="16" align="BOTTOM" border="0" src="./DFT Formulation_files/img397.png" alt="$N$"> samples as:
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x(t)\approx\sum_{n=0}^{N-1}x[n]\delta_{\triangle}(t-n\triangle) \triangle
+\end{displaymath}
+ -->
+
+<img width="231" height="58" border="0" src="./DFT Formulation_files/img398.png" alt="\begin{displaymath}x(t)\approx\sum_{n=0}^{N-1}x[n]\delta_{\triangle}(t-n\triangle) \triangle \end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+In the following, the width <img width="22" height="35" align="MIDDLE" border="0" src="./DFT Formulation_files/img130.png" alt="$\triangle$"> of the square impulse is denoted by 
+<img width="61" height="35" align="MIDDLE" border="0" src="./DFT Formulation_files/img118.png" alt="$t_0=\triangle$">.
+
+<p>
+<img align="BOTTOM" border="0" src="./DFT Formulation_files/impulsesampling.gif" alt="impulsesampling.gif">
+
+</p><p>
+Correspondingly, the Fourier coefficients of this signal can be approximated 
+from these samples <img width="37" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img2.png" alt="$x[n]$">:
+<br>
+</p><div align="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+c_k&=&\frac{1}{T}\int_T x(t) e^{-jk\omega_0t}dt
+  \approx \frac{1}{T}\sum_{n=0}^{N-1} x[n] e^{-jk\omega_0nt_0} t_0
+  \nonumber \\
+  &=&\frac{1}{T/t_0}\sum_{n=0}^{N-1} x[n] e^{-j2\pi kn t_0/T} 
+  =\frac{1}{N}\sum_{n=0}^{N-1} x[n] e^{-j2\pi kn/N}=X[k],
+  \;\;\;\;\;(k=0,\cdots, N-1)
+  \nonumber
+\end{eqnarray}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="21" height="33" align="MIDDLE" border="0" src="./DFT Formulation_files/img26.png" alt="$\displaystyle c_k$"></td>
+<td align="CENTER" nowrap=""><img width="19" height="33" align="MIDDLE" border="0" src="./DFT Formulation_files/img24.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="343" height="72" align="MIDDLE" border="0" src="./DFT Formulation_files/img399.png" alt="$\displaystyle \frac{1}{T}\int_T x(t) e^{-jk\omega_0t}dt
+\approx \frac{1}{T}\sum_{n=0}^{N-1} x[n] e^{-jk\omega_0nt_0} t_0$"></td>
+<td width="10" align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT">&nbsp;</td>
+<td align="CENTER" nowrap=""><img width="19" height="33" align="MIDDLE" border="0" src="./DFT Formulation_files/img24.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="632" height="71" align="MIDDLE" border="0" src="./DFT Formulation_files/img400.png" alt="$\displaystyle \frac{1}{T/t_0}\sum_{n=0}^{N-1} x[n] e^{-j2\pi kn t_0/T}
+=\frac{1}{N}\sum_{n=0}^{N-1} x[n] e^{-j2\pi kn/N}=X[k],
+\;\;\;\;\;(k=0,\cdots, N-1)$"></td>
+<td width="10" align="RIGHT">
+&nbsp;</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+Here <img width="42" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img401.png" alt="$X[k]$"> is called the discrete Fourier transform (DFT) of the periodic and 
+discrete signal <img width="37" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img2.png" alt="$x[n]$">. Note that <img width="42" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img401.png" alt="$X[k]$"> is periodic:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+X[k+N]=\frac{1}{N}\sum_{n=0}^{N-1} x[n] e^{-j2\pi (k+N)n/N} 
+=\frac{1}{N}\sum_{n=0}^{N-1} x[n] e^{-j2\pi kn/N} e^{-j2\pi k}=X[k]
+\end{displaymath}
+ -->
+
+<img width="589" height="58" border="0" src="./DFT Formulation_files/img402.png" alt="\begin{displaymath}X[k+N]=\frac{1}{N}\sum_{n=0}^{N-1} x[n] e^{-j2\pi (k+N)n/N}
+...
+...c{1}{N}\sum_{n=0}^{N-1} x[n] e^{-j2\pi kn/N} e^{-j2\pi k}=X[k] \end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+therefore the spectrum <img width="47" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img302.png" alt="$X(f)$"> of this sampled signal becomes periodic. As 
+two consecutive frequency components are <img width="79" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img403.png" alt="$f_0=1/T$"> Hz apart, the period is
+<!-- MATH
+ $Nf_0=N/T=1/t_0=F$
+ -->
+<img width="200" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img404.png" alt="$Nf_0=N/T=1/t_0=F$">, which happens to be the sampling frequency, i.e.,
+<!-- MATH
+ $X_F(f+F)=X_F(f)$
+ -->
+<img width="173" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img405.png" alt="$X_F(f+F)=X_F(f)$">, where the subscript indicates the period <img width="19" height="16" align="BOTTOM" border="0" src="./DFT Formulation_files/img394.png" alt="$F$">.
+
+<p>
+Given <img width="42" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img401.png" alt="$X[k]$">, the discrete signal can be reconstructed. We multiply both 
+sides of the DFT equation by <!-- MATH
+ $e^{j2\pi km/N}$
+ -->
+<img width="73" height="23" align="BOTTOM" border="0" src="./DFT Formulation_files/img406.png" alt="$e^{j2\pi km/N}$"> and take summary for <img width="15" height="20" align="BOTTOM" border="0" src="./DFT Formulation_files/img407.png" alt="$k$"> from 
+<img width="14" height="19" align="BOTTOM" border="0" src="./DFT Formulation_files/img215.png" alt="$0$"> to <img width="54" height="35" align="MIDDLE" border="0" src="./DFT Formulation_files/img408.png" alt="$N-1$"> to get:
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\sum_{k=0}^{N-1} X[k]e^{j2\pi km/N}
+=\frac{1}{N}\sum_{n=0}^{N-1} x[n]\sum_{k=0}^{N-1} e^{j2\pi k(m-n)/N} 
+=\sum_{n=0}^{N-1} x[n]\delta[m-n]=x[m]
+\end{displaymath}
+ -->
+
+<img width="597" height="59" border="0" src="./DFT Formulation_files/img409.png" alt="\begin{displaymath}\sum_{k=0}^{N-1} X[k]e^{j2\pi km/N}
+=\frac{1}{N}\sum_{n=0}^{N...
+...-1} e^{j2\pi k(m-n)/N}
+=\sum_{n=0}^{N-1} x[n]\delta[m-n]=x[m] \end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+This is the inverse discrete Fourier transform (IDFT). Here we have used the 
+fact that
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\frac{1}{N}\sum_{n=0}^{N-1}e^{\pm j2\pi nk/N}=\delta[k]
+\end{displaymath}
+ -->
+
+<img width="183" height="58" border="0" src="./DFT Formulation_files/img410.png" alt="\begin{displaymath}
+\frac{1}{N}\sum_{n=0}^{N-1}e^{\pm j2\pi nk/N}=\delta[k]
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+It is obvious that the summation is 1 if <img width="49" height="20" align="BOTTOM" border="0" src="./DFT Formulation_files/img294.png" alt="$k=0$">. It becomes zero when <img width="49" height="35" align="MIDDLE" border="0" src="./DFT Formulation_files/img380.png" alt="$k\ne 0$">:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\frac{1}{N}\sum_{n=0}^{N-1}e^{\pm j2\pi nk/N}
+  =\frac{1}{N}\sum_{n=0}^{N-1}(e^{\pm j2\pi k/N})^n
+  =\frac{1}{N}\,\frac{1-e^{\pm j2\pi kN/N}}{(1-e^{\pm j2\pi k/N})}=0
+\end{displaymath}
+ -->
+
+<img width="500" height="58" border="0" src="./DFT Formulation_files/img411.png" alt="\begin{displaymath}
+\frac{1}{N}\sum_{n=0}^{N-1}e^{\pm j2\pi nk/N}
+=\frac{1}{N}...
+...c{1}{N} \frac{1-e^{\pm j2\pi kN/N}}{(1-e^{\pm j2\pi k/N})}=0
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+The second equal sign is due to the geometric series formula:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\sum_{n=0}^{N-1} x^n=\frac{1-x^N}{1-x}
+\end{displaymath}
+ -->
+
+<img width="136" height="58" border="0" src="./DFT Formulation_files/img412.png" alt="\begin{displaymath}\sum_{n=0}^{N-1} x^n=\frac{1-x^N}{1-x}\end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+We put the forward and inverse DFT equations together to form a DFT pair:
+<br>
+<div align="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+X[n]&=&\frac{1}{N}\sum_{m=0}^{N-1} x[m] e^{-j2\pi mn/N},\;\;\;\;\; (n=0,1,\cdots,N-1) 
+  \nonumber \\
+  x[m]&=&\sum_{n=0}^{N-1} X[n] e^{ j2\pi mn/N},\;\;\;\;\; (m=0,1,\cdots,N-1) 
+  \nonumber
+\end{eqnarray}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="43" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img413.png" alt="$\displaystyle X[n]$"></td>
+<td align="CENTER" nowrap=""><img width="19" height="33" align="MIDDLE" border="0" src="./DFT Formulation_files/img24.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="383" height="72" align="MIDDLE" border="0" src="./DFT Formulation_files/img414.png" alt="$\displaystyle \frac{1}{N}\sum_{m=0}^{N-1} x[m] e^{-j2\pi mn/N},\;\;\;\;\; (n=0,1,\cdots,N-1)$"></td>
+<td width="10" align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="42" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img415.png" alt="$\displaystyle x[m]$"></td>
+<td align="CENTER" nowrap=""><img width="19" height="33" align="MIDDLE" border="0" src="./DFT Formulation_files/img24.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="355" height="72" align="MIDDLE" border="0" src="./DFT Formulation_files/img416.png" alt="$\displaystyle \sum_{n=0}^{N-1} X[n] e^{ j2\pi mn/N},\;\;\;\;\; (m=0,1,\cdots,N-1)$"></td>
+<td width="10" align="RIGHT">
+&nbsp;</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+The scaling factor <img width="39" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img417.png" alt="$1/N$"> has little significance in practice. It can be arbitrarily
+moved from the first equation to the second (such as in the Matlab implementation 
+of DFT). 
+
+<p>
+We redefine the DFT pair by putting a scaling factor <img width="56" height="44" align="MIDDLE" border="0" src="./DFT Formulation_files/img418.png" alt="$1/\sqrt{N}$"> in front of both 
+forward and inverse transforms, so that the forward DFT can be expressed as:
+<br>
+</p><div align="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+X[n]&=&\frac{1}{\sqrt{N}}\sum_{m=0}^{N-1} x[m] e^{-j2\pi mn/N},
+  \;\;\;\;\; (n=0,1,\cdots,N-1) 
+  \nonumber \\
+  x[m]&=&\frac{1}{\sqrt{N}}\sum_{n=0}^{N-1} X[n] e^{j2\pi mn/N},
+  \;\;\;\;\; (m=0,1,\cdots,N-1) 
+  \nonumber
+\end{eqnarray}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="43" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img413.png" alt="$\displaystyle X[n]$"></td>
+<td align="CENTER" nowrap=""><img width="19" height="33" align="MIDDLE" border="0" src="./DFT Formulation_files/img24.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="399" height="72" align="MIDDLE" border="0" src="./DFT Formulation_files/img419.png" alt="$\displaystyle \frac{1}{\sqrt{N}}\sum_{m=0}^{N-1} x[m] e^{-j2\pi mn/N},
+\;\;\;\;\; (n=0,1,\cdots,N-1)$"></td>
+<td width="10" align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="42" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img415.png" alt="$\displaystyle x[m]$"></td>
+<td align="CENTER" nowrap=""><img width="19" height="33" align="MIDDLE" border="0" src="./DFT Formulation_files/img24.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="394" height="72" align="MIDDLE" border="0" src="./DFT Formulation_files/img420.png" alt="$\displaystyle \frac{1}{\sqrt{N}}\sum_{n=0}^{N-1} X[n] e^{j2\pi mn/N},
+\;\;\;\;\; (m=0,1,\cdots,N-1)$"></td>
+<td width="10" align="RIGHT">
+&nbsp;</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+The first equation for forward DFT can be written as
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+X[n]=<{\bf x},{\bf w}_n>
+\end{displaymath}
+ -->
+
+<img width="141" height="33" border="0" src="./DFT Formulation_files/img421.png" alt="\begin{displaymath}X[n]=&lt;{\bf x},{\bf w}_n&gt; \end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+where vector <!-- MATH
+ ${\bf x}=[x[0],\cdots,x[N-1]]^T$
+ -->
+<img width="205" height="40" align="MIDDLE" border="0" src="./DFT Formulation_files/img422.png" alt="${\bf x}=[x[0],\cdots,x[N-1]]^T$"> is formed by the <img width="22" height="16" align="BOTTOM" border="0" src="./DFT Formulation_files/img397.png" alt="$N$"> samples
+of the signal, and vector <!-- MATH
+ ${\bf w}_n=[w[0,n],\cdots,w[N-1,n]]^T$
+ -->
+<img width="264" height="40" align="MIDDLE" border="0" src="./DFT Formulation_files/img423.png" alt="${\bf w}_n=[w[0,n],\cdots,w[N-1,n]]^T$"> is formed
+by the following <img width="22" height="16" align="BOTTOM" border="0" src="./DFT Formulation_files/img397.png" alt="$N$"> elements:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+w[m,n]=\frac{1}{\sqrt{N}}e^{j2\pi mn/N} \;\;\;\;(m=0,\cdots,N-1)
+\end{displaymath}
+ -->
+
+<img width="368" height="49" border="0" src="./DFT Formulation_files/img424.png" alt="\begin{displaymath}w[m,n]=\frac{1}{\sqrt{N}}e^{j2\pi mn/N} \;\;\;\;(m=0,\cdots,N-1) \end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+Note that <img width="33" height="33" align="MIDDLE" border="0" src="./DFT Formulation_files/img425.png" alt="${\bf w}_m$"> and <img width="29" height="33" align="MIDDLE" border="0" src="./DFT Formulation_files/img426.png" alt="${\bf w}_n$"> are orthonormal:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+<{\bf w}_m,{\bf w}_n>={\bf w}_m^T {\bf w}_n^*
+=\frac{1}{N}e^{j2\pi(m-n)k/N}=\delta[m-n]
+\end{displaymath}
+ -->
+
+<img width="409" height="45" border="0" src="./DFT Formulation_files/img427.png" alt="\begin{displaymath}&lt;{\bf w}_m,{\bf w}_n&gt;={\bf w}_m^T {\bf w}_n^*
+=\frac{1}{N}e^{j2\pi(m-n)k/N}=\delta[m-n] \end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+therefore <img width="22" height="16" align="BOTTOM" border="0" src="./DFT Formulation_files/img397.png" alt="$N$"> such vectors <img width="29" height="33" align="MIDDLE" border="0" src="./DFT Formulation_files/img426.png" alt="${\bf w}_n$"> (<!-- MATH
+ $n=0,\cdots,N-1$
+ -->
+<img width="142" height="35" align="MIDDLE" border="0" src="./DFT Formulation_files/img428.png" alt="$n=0,\cdots,N-1$">) can be used as a basis to 
+span the N-D unitary space, so that any signal vector <img width="16" height="19" align="BOTTOM" border="0" src="./DFT Formulation_files/img180.png" alt="${\bf x}$"> can be expressed as 
+a linear combination of these basis vectors:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\bf x}=\sum_{n=0}^{N-1} X[n] {\bf w}_n=[{\bf w}_0,\cdots,{\bf w}_{N-1}]
+\left[ \begin{array}{c}X[0]\\\vdots \\X[N-1]\end{array} \right]
+={\bf W} {\bf X}
+\end{displaymath}
+ -->
+
+<img width="459" height="84" border="0" src="./DFT Formulation_files/img429.png" alt="\begin{displaymath}{\bf x}=\sum_{n=0}^{N-1} X[n] {\bf w}_n=[{\bf w}_0,\cdots,{\b...
+...{c}X[0] \vdots  X[N-1]\end{array} \right]
+={\bf W} {\bf X} \end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+where <!-- MATH
+ ${\bf W}=[{\bf w}_0,\cdots,{\bf w}_{N-1}]$
+ -->
+<img width="174" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img430.png" alt="${\bf W}=[{\bf w}_0,\cdots,{\bf w}_{N-1}]$"> is an N by N unitary matrix 
+composed of N orthonormal column vectors <img width="29" height="33" align="MIDDLE" border="0" src="./DFT Formulation_files/img426.png" alt="${\bf w}_n$"> and <!-- MATH
+ ${\bf X}=[X[0],\cdots,
+X[N-1]]^T$
+ -->
+<img width="223" height="40" align="MIDDLE" border="0" src="./DFT Formulation_files/img431.png" alt="${\bf X}=[X[0],\cdots,
+X[N-1]]^T$"> is an N-D vector composed of N DFT coefficients <img width="43" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img432.png" alt="$X[n]$"> (<!-- MATH
+ $n=0,\cdots,
+N-1$
+ -->
+<img width="142" height="35" align="MIDDLE" border="0" src="./DFT Formulation_files/img428.png" alt="$n=0,\cdots,N-1$">). And as shown above, the nth coefficient <img width="43" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img432.png" alt="$X[n]$"> can be obtained as the 
+projection <!-- MATH
+ $<{\bf x},{\bf w}_n>$
+ -->
+<img width="89" height="33" align="MIDDLE" border="0" src="./DFT Formulation_files/img433.png" alt="$&lt;{\bf x},{\bf w}_n&gt;$">. The mth element of the signal vector <img width="16" height="19" align="BOTTOM" border="0" src="./DFT Formulation_files/img180.png" alt="${\bf x}$"> 
+can be written as
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x[m]=\sum_{n=0}^{N-1} X[n] w[m,n]
+=\frac{1}{\sqrt{N}}\sum_{n=0}^{N-1} X[n] e^{ j2\pi mn/N}
+,\;\;\;\;\; (m=0,1,\cdots,N-1)
+\end{displaymath}
+ -->
+
+<img width="597" height="58" border="0" src="./DFT Formulation_files/img434.png" alt="\begin{displaymath}x[m]=\sum_{n=0}^{N-1} X[n] w[m,n]
+=\frac{1}{\sqrt{N}}\sum_{n=0}^{N-1} X[n] e^{ j2\pi mn/N}
+,\;\;\;\;\; (m=0,1,\cdots,N-1) \end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+which is the inverse DFT also shown above. 
+
+<p>
+The DFT matrix <img width="27" height="16" align="BOTTOM" border="0" src="./DFT Formulation_files/img435.png" alt="${\bf W}$"> is unitary and symmetric:
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\bf W}^{-1}={\bf W}^{*T}={\bf W}^*,
+\;\;\;\;\;\mbox{i.e.,}\;\;\;\;\;{\bf W}^*{\bf W}={\bf I}
+\end{displaymath}
+ -->
+
+<img width="337" height="32" border="0" src="./DFT Formulation_files/img436.png" alt="\begin{displaymath}{\bf W}^{-1}={\bf W}^{*T}={\bf W}^*,
+\;\;\;\;\;\mbox{i.e.,}\;\;\;\;\;{\bf W}^*{\bf W}={\bf I} \end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+and the DFT transform pair can be written in matrix form:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\left\{ \begin{array}{l}
+  {\bf x}={\bf W}{\bf X} \\{\bf X}={\bf W}^{-1}{\bf x}={\bf W}^*{\bf x} 
+  \end{array} \right.
+\end{displaymath}
+ -->
+
+<img width="179" height="54" border="0" src="./DFT Formulation_files/img437.png" alt="\begin{displaymath}\left\{ \begin{array}{l}
+{\bf x}={\bf W}{\bf X}  {\bf X}={\bf W}^{-1}{\bf x}={\bf W}^*{\bf x}
+\end{array} \right. \end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+A signal vector <img width="16" height="19" align="BOTTOM" border="0" src="./DFT Formulation_files/img180.png" alt="${\bf x}$"> can be expressed differently under the standard basis
+or the DFT basis:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\bf x}=\sum_{n=0}^{N-1} x[n] {\bf e}_n=\sum_{n=0}^{N-1} X[n] {\bf w}_n
+\end{displaymath}
+ -->
+
+<img width="240" height="58" border="0" src="./DFT Formulation_files/img438.png" alt="\begin{displaymath}{\bf x}=\sum_{n=0}^{N-1} x[n] {\bf e}_n=\sum_{n=0}^{N-1} X[n] {\bf w}_n \end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+The two sets of coefficients <!-- MATH
+ ${\bf x}=[x[0],\cdots,x[N-1]]^T$
+ -->
+<img width="205" height="40" align="MIDDLE" border="0" src="./DFT Formulation_files/img422.png" alt="${\bf x}=[x[0],\cdots,x[N-1]]^T$"> and <!-- MATH
+ ${\bf X}=[X[0],
+\cdots,X[N-1]]^T$
+ -->
+<img width="223" height="40" align="MIDDLE" border="0" src="./DFT Formulation_files/img431.png" alt="${\bf X}=[X[0],\cdots,
+X[N-1]]^T$"> are related by a unitary matrix <img width="27" height="16" align="BOTTOM" border="0" src="./DFT Formulation_files/img435.png" alt="${\bf W}$">:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\bf X}={\bf W}^*{\bf x}
+\end{displaymath}
+ -->
+
+<img width="82" height="28" border="0" src="./DFT Formulation_files/img439.png" alt="\begin{displaymath}{\bf X}={\bf W}^*{\bf x} \end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+which can be geometrically interpreted as a rotation in the space from the
+standard basis to the DFT basis.
+
+<p>
+<b>Example 1</b>
+
+</p><p>
+Consider a sinusoid of frequency <img width="40" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img440.png" alt="$k/N$"> (<img width="15" height="20" align="BOTTOM" border="0" src="./DFT Formulation_files/img407.png" alt="$k$"> cycles per <img width="22" height="16" align="BOTTOM" border="0" src="./DFT Formulation_files/img397.png" alt="$N$"> points)...
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x[m]=\cos(m \frac{2\pi}{5})
+  =\frac{1}{2}[e^{jm(2\pi/5)}+e^{-jm(2\pi/5) } ]
+\end{displaymath}
+ -->
+
+<img width="356" height="45" border="0" src="./DFT Formulation_files/img441.png" alt="\begin{displaymath}x[m]=\cos(m \frac{2\pi}{5})
+=\frac{1}{2}[e^{jm(2\pi/5)}+e^{-jm(2\pi/5) } ]
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+with <!-- MATH
+ $\omega_0=2\pi/5$
+ -->
+<img width="88" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img442.png" alt="$\omega_0=2\pi/5$">, or period <img width="56" height="16" align="BOTTOM" border="0" src="./DFT Formulation_files/img443.png" alt="$N=5$">. Its nth Fourier coefficient is:
+<br>
+<div align="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+X[n] &=& \sum_{m=0}^{N-1}x[m]e^{-j2\pi mn/N}=\frac{1}{2}\sum_{m=0}^4
+  [e^{-jm2\pi/5}e^{j2\pi mn/5}+e^{-jm2\pi/5}e^{-j2\pi mn/5}]
+  \nonumber \\
+  &=&\frac{N}{2}\sum_{l=-\infty}^\infty [\delta[n+1]+\delta[n-1]]
+  \nonumber
+\end{eqnarray}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="43" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img413.png" alt="$\displaystyle X[n]$"></td>
+<td align="CENTER" nowrap=""><img width="19" height="33" align="MIDDLE" border="0" src="./DFT Formulation_files/img24.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="531" height="72" align="MIDDLE" border="0" src="./DFT Formulation_files/img444.png" alt="$\displaystyle \sum_{m=0}^{N-1}x[m]e^{-j2\pi mn/N}=\frac{1}{2}\sum_{m=0}^4
+[e^{-jm2\pi/5}e^{j2\pi mn/5}+e^{-jm2\pi/5}e^{-j2\pi mn/5}]$"></td>
+<td width="10" align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT">&nbsp;</td>
+<td align="CENTER" nowrap=""><img width="19" height="33" align="MIDDLE" border="0" src="./DFT Formulation_files/img24.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="227" height="64" align="MIDDLE" border="0" src="./DFT Formulation_files/img445.png" alt="$\displaystyle \frac{N}{2}\sum_{l=-\infty}^\infty [\delta[n+1]+\delta[n-1]]$"></td>
+<td width="10" align="RIGHT">
+&nbsp;</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+
+<p>
+<b>Example 2</b>
+
+</p><p>
+Consider a symmetric square wave with a period of <img width="22" height="16" align="BOTTOM" border="0" src="./DFT Formulation_files/img397.png" alt="$N$"> samples:
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x[m]=\left\{ \begin{array}{ll} 1 &  |m| \le N_1 \\
+    0 & N_1 < |m| \le N/2	\end{array} \right.
+\end{displaymath}
+ -->
+
+<img width="241" height="54" border="0" src="./DFT Formulation_files/img446.png" alt="\begin{displaymath}x[m]=\left\{ \begin{array}{ll} 1 &amp; \vert m\vert \le N_1 \\
+0 &amp; N_1 &lt; \vert m\vert \le N/2 \end{array} \right.
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+For convenience, we choose the limits of the Fourier transform summation from
+<img width="54" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img447.png" alt="$-N/2$"> to <img width="71" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img448.png" alt="$N/2-1$">, instead of from <img width="14" height="19" align="BOTTOM" border="0" src="./DFT Formulation_files/img215.png" alt="$0$"> to <img width="54" height="35" align="MIDDLE" border="0" src="./DFT Formulation_files/img408.png" alt="$N-1$"> to get
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+X[n]=\sum_{m=-N/2}^{N/2-1} x[m]e^{-j2\pi mn/N}=\sum_{m=-N_1}^{N_1} e^{-j2\pi mn/N}
+\end{displaymath}
+ -->
+
+<img width="399" height="65" border="0" src="./DFT Formulation_files/img449.png" alt="\begin{displaymath}X[n]=\sum_{m=-N/2}^{N/2-1} x[m]e^{-j2\pi mn/N}=\sum_{m=-N_1}^{N_1} e^{-j2\pi mn/N}
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+Let <img width="112" height="38" align="MIDDLE" border="0" src="./DFT Formulation_files/img450.png" alt="$m&#39;=m+N_1$">, we have <img width="113" height="38" align="MIDDLE" border="0" src="./DFT Formulation_files/img451.png" alt="$m=m&#39;-N_1$"> and
+<br>
+<div align="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+X[n]&=&\sum_{m'=0}^{2N_1} e^{-j2\pi m'n/N} e^{j2\pi N_1n/N} 
+ =e^{j2\pi N_1n/N} \frac{1-e^{-j2\pi(2N_1+1)n/N}}{1-e^{-j2\pi n/N}}
+ \nonumber \\
+ &=&e^{j2\pi N_1n/N} \frac{e^{-j\pi(2N_1+1)n/N}(e^{j\pi(2N_1+1)n/N}
+   +e^{-j\pi(2N_1+1)n/N})}{e^{-j\pi n/N}(e^{j\pi n/N}-e^{-j\pi n/N})}
+ \nonumber \\
+ &=&\frac{sin((2N_1+1)n\pi/N)}{sin(n\pi/N)}
+ \nonumber
+\end{eqnarray}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="43" height="37" align="MIDDLE" border="0" src="./DFT Formulation_files/img413.png" alt="$\displaystyle X[n]$"></td>
+<td align="CENTER" nowrap=""><img width="19" height="33" align="MIDDLE" border="0" src="./DFT Formulation_files/img24.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="455" height="71" align="MIDDLE" border="0" src="./DFT Formulation_files/img452.png" alt="$\displaystyle \sum_{m&#39;=0}^{2N_1} e^{-j2\pi m&#39;n/N} e^{j2\pi N_1n/N}
+=e^{j2\pi N_1n/N} \frac{1-e^{-j2\pi(2N_1+1)n/N}}{1-e^{-j2\pi n/N}}$"></td>
+<td width="10" align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT">&nbsp;</td>
+<td align="CENTER" nowrap=""><img width="19" height="33" align="MIDDLE" border="0" src="./DFT Formulation_files/img24.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="448" height="69" align="MIDDLE" border="0" src="./DFT Formulation_files/img453.png" alt="$\displaystyle e^{j2\pi N_1n/N} \frac{e^{-j\pi(2N_1+1)n/N}(e^{j\pi(2N_1+1)n/N}
++e^{-j\pi(2N_1+1)n/N})}{e^{-j\pi n/N}(e^{j\pi n/N}-e^{-j\pi n/N})}$"></td>
+<td width="10" align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT">&nbsp;</td>
+<td align="CENTER" nowrap=""><img width="19" height="33" align="MIDDLE" border="0" src="./DFT Formulation_files/img24.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="176" height="63" align="MIDDLE" border="0" src="./DFT Formulation_files/img454.png" alt="$\displaystyle \frac{sin((2N_1+1)n\pi/N)}{sin(n\pi/N)}$"></td>
+<td width="10" align="RIGHT">
+&nbsp;</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+
+<p>
+</p><hr>
+<!--Navigation Panel-->
+<a name="tex2html196" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node17.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="file:///sw/share/lib/latex2html/icons/next.png"></a> 
+<a name="tex2html194" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node15.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="file:///sw/share/lib/latex2html/icons/up.png"></a> 
+<a name="tex2html188" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node15.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="file:///sw/share/lib/latex2html/icons/prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html197" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node17.html">Physical Interpretation of DFT</a>
+<b> Up:</b> <a name="tex2html195" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node15.html">Discrete Fourier transform (DFT)</a>
+<b> Previous:</b> <a name="tex2html189" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node15.html">Discrete Fourier transform (DFT)</a>
+<!--End of Navigation Panel-->
+<address>
+Ruye Wang
+2009-01-04
+</address>
+
+
+</body></html>

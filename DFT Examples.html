@@ -1,0 +1,520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- saved from url=(0064)http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node18.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>DFT Examples</title>
+<meta name="description" content="DFT Examples">
+<meta name="keywords" content="signalsystem">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2002-2-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/signalsystem.css">
+
+<link rel="previous" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node17.html">
+<link rel="up" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node15.html">
+<link rel="next" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node19.html">
+</head>
+
+<body>
+<!--Navigation Panel-->
+<a name="tex2html214" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node19.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="file:///sw/share/lib/latex2html/icons/next.png"></a> 
+<a name="tex2html212" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node15.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="file:///sw/share/lib/latex2html/icons/up.png"></a> 
+<a name="tex2html208" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node17.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="file:///sw/share/lib/latex2html/icons/prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html215" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node19.html">Sampling Theorem</a>
+<b> Up:</b> <a name="tex2html213" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node15.html">Discrete Fourier transform (DFT)</a>
+<b> Previous:</b> <a name="tex2html209" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node17.html">Physical Interpretation of DFT</a>
+<br>
+<br>
+<!--End of Navigation Panel-->
+
+<h2><a name="SECTION00043000000000000000">
+DFT Examples</a>
+</h2>
+
+<p>
+As discussed before, an N-point DFT and inverse DFT can be implemented as matrix
+multiplications
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\left\{ \begin{array}{l}{\bf X}={\bf W}^*{\bf x} \\
+  {\bf x}={\bf W}{\bf X} \end{array} \right.
+\end{displaymath}
+ -->
+
+<img width="102" height="54" border="0" src="./DFT Examples_files/img489.png" alt="\begin{displaymath}\left\{ \begin{array}{l}{\bf X}={\bf W}^*{\bf x} \\
+{\bf x}={\bf W}{\bf X} \end{array} \right. \end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+where <img width="27" height="16" align="BOTTOM" border="0" src="./DFT Examples_files/img435.png" alt="${\bf W}$"> is the N by N DFT matrix with its mnth element being
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+w[m,n]=\frac{1}{\sqrt{N}}e^{j2\pi mn/N}
+=\frac{1}{\sqrt{N}}[\cos(2\pi mn/N)+j\sin(2\pi mn/N)]
+\end{displaymath}
+ -->
+
+<img width="520" height="49" border="0" src="./DFT Examples_files/img490.png" alt="\begin{displaymath}w[m,n]=\frac{1}{\sqrt{N}}e^{j2\pi mn/N}
+=\frac{1}{\sqrt{N}}[\cos(2\pi mn/N)+j\sin(2\pi mn/N)] \end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+Consider the following cases for N=2, 4 and 8. First when <img width="56" height="16" align="BOTTOM" border="0" src="./DFT Examples_files/img491.png" alt="$N=2$">, the element of 
+the mth row and nth column of the 2-point DFT matrix is 
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+w[m,n]=w[n,m]=\frac{1}{\sqrt{2}}(e^{j2\pi /N})^{mn}
+  =\frac{1}{\sqrt{2}}(e^{j\pi})^{mn}=\frac{1}{\sqrt{2}}(-1)^{mn},\;\;\;\;(m,n=0,1)
+\end{displaymath}
+ -->
+
+<img width="642" height="49" border="0" src="./DFT Examples_files/img492.png" alt="\begin{displaymath}
+w[m,n]=w[n,m]=\frac{1}{\sqrt{2}}(e^{j2\pi /N})^{mn}
+=\frac...
+...}(e^{j\pi})^{mn}=\frac{1}{\sqrt{2}}(-1)^{mn},\;\;\;\;(m,n=0,1)
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+and the DFT matrix can be found to be:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\bf W}_{2\times 2}=\frac{1}{\sqrt{2}}\left[ \begin{array}{rr} 1 & 1 \\1 & -1 
+    \end{array} \right]
+\end{displaymath}
+ -->
+
+<img width="184" height="54" border="0" src="./DFT Examples_files/img493.png" alt="\begin{displaymath}{\bf W}_{2\times 2}=\frac{1}{\sqrt{2}}\left[ \begin{array}{rr} 1 &amp; 1  1 &amp; -1
+\end{array} \right]
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+Now the DFT of the given 2-point signal <!-- MATH
+ ${\bf x}=[x[0], x[1]]^T$
+ -->
+<img width="131" height="40" align="MIDDLE" border="0" src="./DFT Examples_files/img494.png" alt="${\bf x}=[x[0], x[1]]^T$"> can be easily found 
+to be
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\bf X}=\left[ \begin{array}{r} X[0] \\X[1] \end{array} \right]
+  ={\bf W}^*{\bf x}
+  =\frac{1}{\sqrt{2}} \left[ \begin{array}{rr} 1 & 1 \\1 & -1 \end{array} \right]
+  \left[ \begin{array}{r} x[0] \\x[1] \end{array} \right]
+  =\frac{1}{\sqrt{2}}\left[ \begin{array}{r} x[0]+x[1] \\x[0]-x[1] \end{array} \right]
+\end{displaymath}
+ -->
+
+<img width="560" height="54" border="0" src="./DFT Examples_files/img495.png" alt="\begin{displaymath}{\bf X}=\left[ \begin{array}{r} X[0]  X[1] \end{array} \rig...
+...t[ \begin{array}{r} x[0]+x[1]  x[0]-x[1] \end{array} \right]
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+We see that the first component <img width="41" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img468.png" alt="$X[0]$"> is proportional to the sum of the two signal 
+samples <img width="88" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img496.png" alt="$x[0]+x[1]$"> representing the average or DC component of the signal, and second 
+<img width="41" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img497.png" alt="$X[1]$"> is proportional to the difference between the two samples <img width="89" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img498.png" alt="$x[0]-x[1]$">. 
+
+<p>
+When <img width="56" height="16" align="BOTTOM" border="0" src="./DFT Examples_files/img499.png" alt="$N=4$">, the element of the mth row and nth column of the 4-point DFT matrix is 
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+w[m,n]=w[n,m]=\frac{1}{\sqrt{N}}(e^{j2\pi /N})^{mn}
+  =\frac{1}{2}(e^{j\pi/2})^{mn}=j^{mn},\;\;\;\;(m,n=0,\cdots,3)
+\end{displaymath}
+ -->
+
+<img width="622" height="49" border="0" src="./DFT Examples_files/img500.png" alt="\begin{displaymath}
+w[m,n]=w[n,m]=\frac{1}{\sqrt{N}}(e^{j2\pi /N})^{mn}
+=\frac{1}{2}(e^{j\pi/2})^{mn}=j^{mn},\;\;\;\;(m,n=0,\cdots,3)
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+The 4 by 4 DFT matrix can be found to be:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\bf W}_{4\times 4}= \frac{1}{2}\left[ \begin{array}{rrrr} 
+      1 & 1 & 1 & 1 \\1 & j & -1 & -j \\1 & -1 & 1 & -1 \\1 & -j & -1 & j
+    \end{array} \right]
+\end{displaymath}
+ -->
+
+<img width="250" height="99" border="0" src="./DFT Examples_files/img501.png" alt="\begin{displaymath}{\bf W}_{4\times 4}= \frac{1}{2}\left[ \begin{array}{rrrr}
+...
+... -j  1 &amp; -1 &amp; 1 &amp; -1  1 &amp; -j &amp; -1 &amp; j
+\end{array} \right]
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+When <img width="56" height="16" align="BOTTOM" border="0" src="./DFT Examples_files/img502.png" alt="$N=8$">, the real and imaginary parts of the DFT matrix <!-- MATH
+ ${\bf W}={\bf W}_r+j{\bf W}_j$
+ -->
+<img width="143" height="35" align="MIDDLE" border="0" src="./DFT Examples_files/img503.png" alt="${\bf W}={\bf W}_r+j{\bf W}_j$">
+are respectively:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\bf W}_r=\frac{1}{\sqrt{8}} \left[ \begin{tabular}{rrrrrrrr} 
+      1.0 & 1.0 & 1.0 & 1.0 & 1.0 & 1.0 & 1.0 & 1.0  \\
+      1.0 & 0.7 & 0.0 &-0.7 &-1.0 &-0.7 & 0.0 & 0.7  \\
+      1.0 & 0.0 &-1.0 & 0.0 & 1.0 & 0.0 &-1.0 &-0.0  \\
+      1.0 &-0.7 & 0.1 & 0.7 &-1.0 & 0.7 & 0.0 &-0.7  \\
+      1.0 &-1.0 & 1.0 &-1.0 & 1.0 &-1.0 & 1.0 &-1.0  \\
+      1.0 &-0.7 & 0.0 & 0.7 &-1.0 & 0.7 & 0.0 &-0.7  \\
+      1.0 & 0.0 &-1.0 & 0.0 & 1.0 & 0.0 &-1.0 &-0.0  \\
+      1.0 & 0.7 & 0.0 &-0.7 &-1.0 &-0.7 & 0.0 & 0.7  \\
+    \end{tabular} \right]
+\;\;\;\;
+ {\bf W}_j=\frac{1}{\sqrt{8}} \left[ \begin{tabular}{rrrrrrrr} 
+      0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+      0.0 &-0.7 &-1.0 &-0.7 & 0.0 & 0.7 & 1.0 & 0.7 \\
+      0.0 &-1.0 & 0.0 & 1.0 & 0.0 &-1.0 & 0.0 & 1.0 \\
+      0.0 &-0.7 & 1.0 &-0.7 & 0.0 & 0.7 &-1.0 & 0.7 \\
+      0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+      0.0 & 0.7 &-1.0 & 0.7 & 0.0 &-0.7 & 1.0 &-0.7 \\
+      0.0 & 1.0 & 0.0 &-1.0 & 0.0 & 1.0 & 0.0 &-1.0 \\
+      0.0 & 0.7 & 1.0 & 0.7 & 0.0 &-0.7 &-1.0 &-0.7 \\
+    \end{tabular} \right]
+\end{displaymath}
+ -->
+
+<img width="1004" height="191" border="0" src="./DFT Examples_files/img504.png" alt="\begin{displaymath}{\bf W}_r=\frac{1}{\sqrt{8}} \left[ \begin{tabular}{rrrrrrrr}...
+...&amp; 1.0 &amp; 0.7 &amp; 0.0 &amp;-0.7 &amp;-1.0 &amp;-0.7 \\
+\end{tabular} \right]
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+
+<p>
+<img align="BOTTOM" border="0" src="./DFT Examples_files/DFTbasis.gif" alt="DFTbasis.gif">
+
+</p><p>
+<b>Example</b>
+
+</p><p>
+Find the DFT of a real signal of <img width="56" height="16" align="BOTTOM" border="0" src="./DFT Examples_files/img502.png" alt="$N=8$"> samples: <!-- MATH
+ $[0, 0, 2, 3, 4, 0, 0, 0]$
+ -->
+<img width="148" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img505.png" alt="$[0, 0, 2, 3, 4, 0, 0, 0]$">, 
+which is represented as a complex vector with zero imaginary part:
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\bf x}=[(0,0), (0,0), (2,0), (3,0), (4,0), (0,0), (0,0), (0,0)]^T
+\end{displaymath}
+ -->
+
+<img width="448" height="33" border="0" src="./DFT Examples_files/img506.png" alt="\begin{displaymath}{\bf x}=[(0,0), (0,0), (2,0), (3,0), (4,0), (0,0), (0,0), (0,0)]^T \end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+The element in the mth row and nth column of the 8 by 8 DFT matrix is
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+w[m,n]=\frac{1}{\sqrt{N}}e^{-j2\pi mn/N}=\frac{1}{\sqrt{8}}(e^{-j\pi /4})^{mn}
+  =\frac{1}{\sqrt{8}}[\cos(\frac{\pi mn}{4})-j\;\sin(\frac{\pi mn}{4})]
+\end{displaymath}
+ -->
+
+<img width="596" height="49" border="0" src="./DFT Examples_files/img507.png" alt="\begin{displaymath}w[m,n]=\frac{1}{\sqrt{N}}e^{-j2\pi mn/N}=\frac{1}{\sqrt{8}}(e...
+...1}{\sqrt{8}}[\cos(\frac{\pi mn}{4})-j\;\sin(\frac{\pi mn}{4})]
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+Carrying out the DFT matrix multiplication:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\bf X}={\bf W}^*{\bf x}
+\end{displaymath}
+ -->
+
+<img width="82" height="28" border="0" src="./DFT Examples_files/img439.png" alt="\begin{displaymath}{\bf X}={\bf W}^*{\bf x} \end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+we get the <img width="56" height="16" align="BOTTOM" border="0" src="./DFT Examples_files/img502.png" alt="$N=8$"> DFT coefficients <!-- MATH
+ ${\bf X}={\bf X}_r+j{\bf X}_j$
+ -->
+<img width="125" height="35" align="MIDDLE" border="0" src="./DFT Examples_files/img508.png" alt="${\bf X}={\bf X}_r+j{\bf X}_j$">:
+<br>
+<div align="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+{\bf X}_r&=&\left[ \begin{array}{rrrrrrrr}
+      3.18, & -2.16, & 0.71, & -0.66, & 1.06, & -0.66, & 0.71, & -2.61
+      \end{array} \right]^T  \nonumber \\
+  {\bf X}_j&=&\left[ \begin{array}{rrrrrrrr}
+      0.0, & -1.46, & 1.06, & -0.04, & 0.0, & 0.04, & -1.06, & 1.46
+  \end{array} \right]^T
+  \nonumber
+\end{eqnarray}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="28" height="35" align="MIDDLE" border="0" src="./DFT Examples_files/img509.png" alt="$\displaystyle {\bf X}_r$"></td>
+<td align="CENTER" nowrap=""><img width="19" height="33" align="MIDDLE" border="0" src="./DFT Examples_files/img24.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="519" height="54" align="MIDDLE" border="0" src="./DFT Examples_files/img510.png" alt="$\displaystyle \left[ \begin{array}{rrrrrrrr}
+3.18, &amp; -2.16, &amp; 0.71, &amp; -0.66, &amp; 1.06, &amp; -0.66, &amp; 0.71, &amp; -2.61
+\end{array} \right]^T$"></td>
+<td width="10" align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="28" height="35" align="MIDDLE" border="0" src="./DFT Examples_files/img511.png" alt="$\displaystyle {\bf X}_j$"></td>
+<td align="CENTER" nowrap=""><img width="19" height="33" align="MIDDLE" border="0" src="./DFT Examples_files/img24.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="486" height="54" align="MIDDLE" border="0" src="./DFT Examples_files/img512.png" alt="$\displaystyle \left[ \begin{array}{rrrrrrrr}
+0.0, &amp; -1.46, &amp; 1.06, &amp; -0.04, &amp; 0.0, &amp; 0.04, &amp; -1.06, &amp; 1.46
+\end{array} \right]^T$"></td>
+<td width="10" align="RIGHT">
+&nbsp;</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+The real and imaginary parts of these complex coefficients are shown below.
+As the time signal is real, its DFT is symmetric. The real part is even 
+<img width="115" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img513.png" alt="$X_r[1]=X_r[7]$">, <img width="115" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img514.png" alt="$X_r[2]=X_r[6]$">, <img width="115" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img515.png" alt="$X_r[3]=X_r[5]$">, and the imaginary part 
+is odd: <!-- MATH
+ $X_j[1]=-X_j[7]$
+ -->
+<img width="129" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img516.png" alt="$X_j[1]=-X_j[7]$">, <!-- MATH
+ $X_j[2]=-X_j[6]$
+ -->
+<img width="129" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img517.png" alt="$X_j[2]=-X_j[6]$">, <!-- MATH
+ $X_j[3]=-X_j[5]$
+ -->
+<img width="129" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img518.png" alt="$X_j[3]=-X_j[5]$">. However, note 
+that <!-- MATH
+ $X_r[0]\ne X_r[4]$
+ -->
+<img width="115" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img519.png" alt="$X_r[0]\ne X_r[4]$">, and <!-- MATH
+ $X_j[0]=X_j[4]=0$
+ -->
+<img width="149" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img520.png" alt="$X_j[0]=X_j[4]=0$">. 
+<img align="BOTTOM" border="0" src="./DFT Examples_files/DFT8example.gif" alt="DFT8example.gif">
+
+<p>
+The signal <img width="42" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img455.png" alt="$x[m]$"> can also be reconstructed by the inverse DFT from its DFT
+coefficients <img width="43" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img432.png" alt="$X[n]$">:
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\bf x}=\left[ \begin{array}{c} x[0]\\\vdots \\x[7] \end{array} \right]
+  ={\bf W}{\bf X}
+  =[{\bf w}_0,\cdots,{\bf w}_7]
+  \left[ \begin{array}{c} X[0]\\\vdots \\X[7]\end{array} \right]
+  =\sum_{n=0}^7 X[n]{\bf w}_n
+\end{displaymath}
+ -->
+
+<img width="485" height="84" border="0" src="./DFT Examples_files/img521.png" alt="\begin{displaymath}{\bf x}=\left[ \begin{array}{c} x[0] \vdots  x[7] \end{ar...
+...\vdots  X[7]\end{array} \right]
+=\sum_{n=0}^7 X[n]{\bf w}_n
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+Here the signal <img width="16" height="19" align="BOTTOM" border="0" src="./DFT Examples_files/img180.png" alt="${\bf x}$"> is expressed as a linear combination of the
+column vectors of the DFT matrix <img width="27" height="16" align="BOTTOM" border="0" src="./DFT Examples_files/img435.png" alt="${\bf W}$">, which, as a set of 8 orthonormal
+basis vectors, span an 8-D vector space.
+
+<p>
+Consider specifically what these 8 complex values <!-- MATH
+ $X[n]=X_r[n]+jX_j[n]$
+ -->
+<img width="189" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img522.png" alt="$X[n]=X_r[n]+jX_j[n]$"> 
+(<img width="102" height="33" align="MIDDLE" border="0" src="./DFT Examples_files/img523.png" alt="$n=0,\cdots,7$">) represent:
+
+</p><ul>
+<li><img width="47" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img524.png" alt="$X_r[0]$"> is proportional to the sum of all signal samples <img width="42" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img455.png" alt="$x[m]$">, therefore
+    it represents the average of the signal. This is a real value as <img width="81" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img525.png" alt="$X_j[0]=0$">.
+</li>
+<li>The three pairs of terms corresponding to <img width="68" height="33" align="MIDDLE" border="0" src="./DFT Examples_files/img526.png" alt="$n=1,7$">, <img width="68" height="33" align="MIDDLE" border="0" src="./DFT Examples_files/img527.png" alt="$n=2,6$"> and <img width="68" height="33" align="MIDDLE" border="0" src="./DFT Examples_files/img528.png" alt="$n=3,5$"> 
+    represent respectively three sinusoids of frequency <img width="84" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img529.png" alt="$f_n=n/N$"> or 
+    <!-- MATH
+ $\omega_n=2\pi f_n=2n\pi/N$
+ -->
+<img width="171" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img530.png" alt="$\omega_n=2\pi f_n=2n\pi/N$">, with amplitude <!-- MATH
+ $|X[n]|=\sqrt{X^2_r[n]+X^2_j[n]}$
+ -->
+<img width="210" height="48" align="MIDDLE" border="0" src="./DFT Examples_files/img531.png" alt="$\vert X[n]\vert=\sqrt{X^2_r[n]+X^2_j[n]}$"> 
+    and phase <!-- MATH
+ $\angle X[n]=\tan^{-1} (X_j[n]/X_r[n])$
+ -->
+<img width="236" height="39" align="MIDDLE" border="0" src="./DFT Examples_files/img532.png" alt="$\angle X[n]=\tan^{-1} (X_j[n]/X_r[n])$">:
+    
+<ul>
+<li><img width="68" height="33" align="MIDDLE" border="0" src="./DFT Examples_files/img526.png" alt="$n=1,7$">:
+	<img width="75" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img533.png" alt="$f_1=1/8$">, <img width="82" height="33" align="MIDDLE" border="0" src="./DFT Examples_files/img534.png" alt="$\omega_1=0.79$">, <img width="129" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img535.png" alt="$\vert X[1]\vert=2.61/8$">, <!-- MATH
+ $\angle X[1]=-2.55$
+ -->
+<img width="125" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img536.png" alt="$\angle X[1]=-2.55$"> rad/sec.
+</li>
+<li><img width="68" height="33" align="MIDDLE" border="0" src="./DFT Examples_files/img527.png" alt="$n=2,6$">: 
+	<img width="75" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img537.png" alt="$f_2=2/8$">, <img width="82" height="33" align="MIDDLE" border="0" src="./DFT Examples_files/img538.png" alt="$\omega_2=1.57$">, <img width="129" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img539.png" alt="$\vert X[2]\vert=1.28/8$">, <!-- MATH
+ $\angle X[2]=0.98$
+ -->
+<img width="110" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img540.png" alt="$\angle X[2]=0.98$"> rad/sec.
+</li>
+<li><img width="68" height="33" align="MIDDLE" border="0" src="./DFT Examples_files/img528.png" alt="$n=3,5$">: 
+	<img width="75" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img541.png" alt="$f_3=3/8$">, <img width="82" height="33" align="MIDDLE" border="0" src="./DFT Examples_files/img542.png" alt="$\omega_3=2.36$">, <img width="129" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img543.png" alt="$\vert X[3]\vert=0.67/8$">, <!-- MATH
+ $\angle X[3]=-3.08$
+ -->
+<img width="125" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img544.png" alt="$\angle X[3]=-3.08$"> rad/sec.
+    
+</li>
+</ul>
+</li>
+<li><img width="100" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img545.png" alt="$X_r[4]=3/8$"> is the amplitude of the highest frequency component with
+    <img width="75" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img546.png" alt="$f_4=4/8$"> or <img width="82" height="33" align="MIDDLE" border="0" src="./DFT Examples_files/img547.png" alt="$\omega_4=3.14$">. As <img width="81" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img548.png" alt="$X_j[4]=0$">, the phase shift is zero.
+</li>
+</ul>
+Now the signal can be expanded as:
+<br>
+<div align="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+x[m]&=&\frac{1}{\sqrt{N}}[X[0]+2\,\sum_{n=1}^3 |X[n]|\cos(\frac{2\pi mn}{N}+\angle X[n])+X[4]\cos(m\pi)]
+  \nonumber \\
+  &=&\frac{1}{\sqrt{8}}[3.18+2(2.61\cos(0.79m-2.55)+1.28\cos(1.57m+0.98)+0.67\cos(2.36m-3.08))]
+  \nonumber \\
+  &+&1.06 \cos(3.14m)],\;\;\;\;(m=0,\cdots,7)
+    \nonumber
+\end{eqnarray}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="42" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img415.png" alt="$\displaystyle x[m]$"></td>
+<td align="CENTER" nowrap=""><img width="19" height="33" align="MIDDLE" border="0" src="./DFT Examples_files/img24.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="502" height="71" align="MIDDLE" border="0" src="./DFT Examples_files/img549.png" alt="$\displaystyle \frac{1}{\sqrt{N}}[X[0]+2 \sum_{n=1}^3 \vert X[n]\vert\cos(\frac{2\pi mn}{N}+\angle X[n])+X[4]\cos(m\pi)]$"></td>
+<td width="10" align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT">&nbsp;</td>
+<td align="CENTER" nowrap=""><img width="19" height="33" align="MIDDLE" border="0" src="./DFT Examples_files/img24.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="713" height="59" align="MIDDLE" border="0" src="./DFT Examples_files/img550.png" alt="$\displaystyle \frac{1}{\sqrt{8}}[3.18+2(2.61\cos(0.79m-2.55)+1.28\cos(1.57m+0.98)+0.67\cos(2.36m-3.08))]$"></td>
+<td width="10" align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT">&nbsp;</td>
+<td align="CENTER" nowrap=""><img width="19" height="33" align="MIDDLE" border="0" src="./DFT Examples_files/img551.png" alt="$\textstyle +$"></td>
+<td align="LEFT" nowrap=""><img width="282" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img552.png" alt="$\displaystyle 1.06 \cos(3.14m)],\;\;\;\;(m=0,\cdots,7)$"></td>
+<td width="10" align="RIGHT">
+&nbsp;</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+To illustrate the reconstruction of this 8-point discrete signal, we consider it
+as the discrete version of the corresponding Fourier expansion of a continuous signal, 
+which can be reconstructed as a linear combination of the its frequency components with
+progressively more frequency components with higher frequencies. As shown in the image
+below. From the top down, the number of components included in the reconstruction is 
+increased with progressively higher frequencies from <img width="56" height="35" align="MIDDLE" border="0" src="./DFT Examples_files/img553.png" alt="$f_0=0$"> (DC component) to <img width="21" height="35" align="MIDDLE" border="0" src="./DFT Examples_files/img554.png" alt="$f_4$"> 
+(highest frequency). The perfect reconstruction is obtained when all frequency 
+components are included.
+<img align="BOTTOM" border="0" src="./DFT Examples_files/DFT8example1.gif" alt="DFT8example1.gif">
+
+<p>
+In the discrete spectrum <img width="28" height="35" align="MIDDLE" border="0" src="./DFT Examples_files/img555.png" alt="${\bf X}_r$"> and <img width="28" height="35" align="MIDDLE" border="0" src="./DFT Examples_files/img556.png" alt="${\bf X}_j$">, the DC is on the left 
+(<img width="50" height="19" align="BOTTOM" border="0" src="./DFT Examples_files/img467.png" alt="$n=0$">) while the highest frequency component is in the middle (<img width="110" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img557.png" alt="$n=N/2=4$">). One 
+may want to shift the discrete spectrum by half of its length <img width="39" height="37" align="MIDDLE" border="0" src="./DFT Examples_files/img465.png" alt="$N/2$"> so that the DC 
+component in the middle while the higher frequencies are farther away from it on both 
+sides. This can also be easily realized in time domain due to the frequency-shift 
+property:
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\cal F}^{-1}[X[n-N/2]]=x[m]e^{j2\pi mN/2/N}=x[m]e^{m\pi}=x[m](-1)^m
+\end{displaymath}
+ -->
+
+<img width="493" height="33" border="0" src="./DFT Examples_files/img558.png" alt="\begin{displaymath}{\cal F}^{-1}[X[n-N/2]]=x[m]e^{j2\pi mN/2/N}=x[m]e^{m\pi}=x[m](-1)^m \end{displaymath}">
+</div>
+<br clear="ALL">
+<p></p>
+
+<p>
+i.e., if we negate every other sample in time domain, its spectrum is shifted by
+half of the length to become:
+<br>
+</p><div align="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+{\bf X}_r&=&\left[ \begin{array}{rrrrrrrr}
+      1.06, & -0.66, & 0.71, & -2.61, & 3.18, & -2.16, & 0.71, & -0.66
+      \end{array} \right]^T  \nonumber \\
+  {\bf X}_j&=&\left[ \begin{array}{rrrrrrrr}
+      0.0, & 0.04, & -1.06, & 1.46, & 0.0, & -1.46, & 1.06, & -0.04,
+  \end{array} \right]^T
+  \nonumber
+\end{eqnarray}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="28" height="35" align="MIDDLE" border="0" src="./DFT Examples_files/img509.png" alt="$\displaystyle {\bf X}_r$"></td>
+<td align="CENTER" nowrap=""><img width="19" height="33" align="MIDDLE" border="0" src="./DFT Examples_files/img24.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="519" height="54" align="MIDDLE" border="0" src="./DFT Examples_files/img559.png" alt="$\displaystyle \left[ \begin{array}{rrrrrrrr}
+1.06, &amp; -0.66, &amp; 0.71, &amp; -2.61, &amp; 3.18, &amp; -2.16, &amp; 0.71, &amp; -0.66
+\end{array} \right]^T$"></td>
+<td width="10" align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="28" height="35" align="MIDDLE" border="0" src="./DFT Examples_files/img511.png" alt="$\displaystyle {\bf X}_j$"></td>
+<td align="CENTER" nowrap=""><img width="19" height="33" align="MIDDLE" border="0" src="./DFT Examples_files/img24.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="491" height="54" align="MIDDLE" border="0" src="./DFT Examples_files/img560.png" alt="$\displaystyle \left[ \begin{array}{rrrrrrrr}
+0.0, &amp; 0.04, &amp; -1.06, &amp; 1.46, &amp; 0.0, &amp; -1.46, &amp; 1.06, &amp; -0.04,
+\end{array} \right]^T$"></td>
+<td width="10" align="RIGHT">
+&nbsp;</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+Once the signal is decomposed by the DFT into different frequency components in 
+frequency domain, various filtering processing can be carried out as needed for 
+the specific application, for example, low, band and high-pass (or stop), by 
+manipulating the coefficients for different frequency components.
+
+<p>
+</p><hr>
+<!--Navigation Panel-->
+<a name="tex2html214" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node19.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="file:///sw/share/lib/latex2html/icons/next.png"></a> 
+<a name="tex2html212" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node15.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="file:///sw/share/lib/latex2html/icons/up.png"></a> 
+<a name="tex2html208" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node17.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="file:///sw/share/lib/latex2html/icons/prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html215" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node19.html">Sampling Theorem</a>
+<b> Up:</b> <a name="tex2html213" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node15.html">Discrete Fourier transform (DFT)</a>
+<b> Previous:</b> <a name="tex2html209" href="http://fourier.eng.hmc.edu/e59/lectures/signalsystem/node17.html">Physical Interpretation of DFT</a>
+<!--End of Navigation Panel-->
+<address>
+Ruye Wang
+2009-01-04
+</address>
+
+
+</body></html>

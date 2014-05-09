@@ -1,5 +1,5 @@
 \documentclass{beamer}
-
+\usepackage{amsmath}
 % \usepackage{beamerthemesplit} // Activate for custom appearance
 
 \title{Fourier Transforms}
@@ -19,20 +19,36 @@
 {
   \frametitle{Fourier Series}
 
-  \begin{itemize}
-  \item<1-> Normal LaTeX class.
-  \item<2-> Easy overlays.
-  \item<3-> No external programs needed.      
-  \end{itemize}
 }
 \frame
 {
   \frametitle{Applications}
 
   \begin{itemize}
-  \item<1-> Normal LaTeX class.
-  \item<2-> Easy overlays.
-  \item<3-> No external programs needed.      
+  \item<1-> Data compression
+  \item<2-> Partial Differential Equations
+  \item<3-> A lot of stuff.   
   \end{itemize}
+}
+\frame
+{
+  \frametitle{Fourier Transforms}
+
+  \begin{itemize}
+  \item<1-> Complex input
+  	\begin{itemize}
+		\item Hermitian matrix\\
+		$A=\bar{A^T}$
+		\item Conjugate transpose\\
+		$\bar{A}^T$
+		\item Unitary\\
+		$U*U=I$
+	\end{itemize}
+  \item<2-> Algorithms
+  	\begin{itemize}
+		\item Fast Fourier Transform (FFT)
+		\item Discrete Fourier Transform (DFT)
+	\end{itemize}
+ \end{itemize}
 }
 \end{document}
