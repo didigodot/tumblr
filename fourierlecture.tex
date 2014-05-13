@@ -5,6 +5,11 @@
 \usepackage{amssymb}
 \usepackage{hyperref}
 \usepackage{easybmat}
+\usepackage{epstopdf}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
 \geometry{a4paper} % or letter or a5paper or ... etc
 % \geometry{landscape} % rotated page geometry
 
@@ -33,24 +38,26 @@ Speaking in linear algebra terms, the Fourier transform is a \emph{linear transf
 The Fourier transform relates a function's time or spatial domain to a frequency domain. 
 It can be used to solve a wide variety of problems, including the following:
 \begin{itemize}
-\item Partial (and ordinary) differential equations
-\item Quantum mechanics
-\item Signal processing
+\item Partial (and ordinary) differential equations: the Fourier transform of a function's derivative can be used to change a differential equation to an algebraic equation
+\item Quantum mechanics: Fourier transforms on the solutions to Schr\"{o}dinger's equations form momentum space wave functions
+\item Signal processing: Fourier transforms are employed to filter out noise
 \item Data compression
 \end{itemize}
 
 %%%%
 \section{The Discrete Fourier Transform}
 As you can see, the Fourier transform is continuous, making it difficult for computers to perform the transform to high accuracy. It also requires that the function being transformed be square integrable, thus limiting the possible inputs significantly.\\
-The discrete fourier transform (DFT) is discrete, making it much more conducive to computation. Unlike the Fourier transform, it maps a countable set of numbers to a new countable set of numbers. If you're only interested in transforming a small set of data, use the DFT. Another consequence of its discrete nature is that it can be used to map points from any function, square integrable or not. 
+The discrete fourier transform (DFT) is discrete, making it much more conducive to computation. Unlike the Fourier transform, it maps a countable set of numbers to a new countable set of numbers. If you're only interested in transforming a small set of data, use the DFT.
 \subsection{Definition}
 We simply discretize the Fourier transform by changing the integral to a sum, appropriately:
 $$X_k=\sum_{n=0}^{N-1}x_n e^{-2\pi i n \frac{k}{N}}.$$
-Note that the $\frac{k}{N}$ serves the same purpose as $\xi$ in the continuous case.
+Note that the $\frac{k}{N}$ serves the same purpose as $\xi$ in the continuous case.\\
+The inverse is given by:
+$$ x_k = \frac{1}{N}\sum_{n=0}^{N-1}X_k e^{2\pi i n \frac{k}{N}}.$$
 \subsection{Matrix representation}
 The DFT, unsurprisingly, can be written as a matrix transformation.
 $$
- \begin{pmatrix}
+ F_n=\begin{pmatrix}
   1 && 1 && 1 && \dots && 1 \\
   1 && w && w^2 && \dots && w^{N-1}\\
   1 && w^2 && w^4 && \dots && w^{2(N-1)}\\
@@ -58,7 +65,15 @@ $$
   1 && w^{N-1} && w^{2(N-1)} && \dots && w^{(N-1)^2} \\
  \end{pmatrix}$$
 where $w=e^{i \frac{2\pi}{N}}$.\\
-Notice that this matrix is symmetrical. In fact, its columns are also orthogonal (keep in mind that the complex dot product requires one to take the conjugate transpose).
+The inverse transform is given by:
+$$ \frac{1}{N}F^*,$$ where * denotes the complex conjugate.\\
+Notice that this matrix is symmetrical. In fact, its columns are also orthogonal (keep in mind that the complex dot product requires one to take the conjugate transpose).\\
+These $w$'s can best be thought of as complex roots of unity.\\
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=.45]{DFT_vis.jpg}
+    \caption{The zeroth row transforms by the 0th roots, first row 1st roots, second row square roots, etc$.^{[6]}$}
+\end{figure}
 
 \section{The Fast Fourier Transform}
 The DFT has efficiency $O(n^2)$. The fast Fourier transform (FFT) takes advantage of the symmetry and orthogonality of the DFT matrix, and recursively factors it until we reach an efficiency of $O(nlog(n)).$
@@ -117,7 +132,7 @@ $$
  P_{64}
 $$
 \dots and 
-we find that the efficiency of this process is $O(n log(n))$.
+we find that the efficiency of this process is $O(n log_2(n))$.
 %%%%
 \section{Further reading/Works Cited}
 \begin{enumerate}
@@ -127,5 +142,11 @@ we find that the efficiency of this process is $O(n log(n))$.
 \item Wikipedia. \emph{DFT Matrix}. \url{https://en.wikipedia.org/wiki/DFT_matrix}.
 \item Wikipedia. \emph{Fourier Transform}. \url{https://en.wikipedia.org/wiki/Fourier_transform}
 \item \url{http://math.berkeley.edu/~berlek/classes/CLASS.110/LECTURES/FFT}
+item \emph{Digital Signal Processing/Discrete Fourier Transform. } \url{http://en.wikibooks.org/wiki/Digital_Signal_Processing/Discrete_Fourier_Transform}
 \end{enumerate}
+\vfill
+  \centering
+ \includegraphics[scale=3]{fourier.jpg}\\
+ \url{http://xkcd.com/26/}
+
 \end{document}
