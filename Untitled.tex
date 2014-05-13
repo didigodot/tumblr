@@ -1,0 +1,94 @@
+\newcommand{\blockmatrix}[3]{%These end of the line comments are neccessary
+\begin{minipage}[t][#2][c]{#1}%
+\center%
+#3%
+\end{minipage}%
+}%
+\newcommand{\fblockmatrix}[3]{%
+\fbox{%
+\begin{minipage}[t][#2][c]{#1}%
+\center%
+#3%
+\end{minipage}%
+}%
+}
+
+\documentclass[letterpaper,11pt]{article}
+
+\newcommand{\blockmatrix}[3]{%These end of the line comments are neccessary
+\begin{minipage}[t][#2][c]{#1}%
+\center%
+#3%
+\end{minipage}%
+}%
+\newcommand{\fblockmatrix}[3]{%
+\fbox{%
+\begin{minipage}[t][#2][c]{#1}%
+\center%
+#3%
+\end{minipage}%
+}%
+}
+
+\begin{document}
+
+\fblockmatrix{0.5in}{0.5in}{A} \fblockmatrix{0.1in}{0.5in}{x}
+\blockmatrix{0.1in}{0.5in}{=} \fblockmatrix{0.1in}{0.5in}{b}
+\\
+\\
+
+\fblockmatrix{0.5in}{0.3in}{A} \fblockmatrix{0.1in}{0.5in}{x}
+\blockmatrix{0.1in}{0.5in}{=} \fblockmatrix{0.1in}{0.3in}{b}
+\\
+\\
+
+\fblockmatrix{0.5in}{0.3in}{L}
+\fblockmatrix{0.5in}{0.5in}{M}
+\fblockmatrix{0.3in}{0.5in}{L}
+\fblockmatrix{0.1in}{0.3in}{x}
+\blockmatrix{0.25in}{0.3in}{=}
+\fblockmatrix{0.1in}{0.3in}{b}
+\\
+\\
+
+\fblockmatrix{0.6in}{0.4in}{L}
+\fblockmatrix{0.6in}{0.6in}{M}
+\fblockmatrix{0.4in}{0.6in}{L}
+\fblockmatrix{0.1in}{0.4in}{x}
+\blockmatrix{0.1in}{0.3in}{=}
+\fblockmatrix{0.6in}{0.4in}{L}
+\fblockmatrix{0.6in}{0.6in}{M}
+\fblockmatrix{0.2in}{0.6in}{L}
+\fblockmatrix{0.1in}{0.2in}{b}
+\\
+\\
+
+\fblockmatrix{0.525in}{0.375in}{$L$}
+\fblockmatrix{0.525in}{0.525in}{$M$}
+\fblockmatrix{0.375in}{0.525in}{$L$}
+\fblockmatrix{0.1in}{0.375in}{$x$}
+\blockmatrix{0.1in}{0.275in} {$=$}
+\fblockmatrix{0.525in}{0.375in}{$L$}
+\fblockmatrix{0.525in}{0.525in}{$M$}
+\blockmatrix{0.1in}{0.375in}{\Huge{ $($}}
+\fblockmatrix{0.175in}{0.525in}{$L$}
+\fblockmatrix{0.1in}{0.175in}{$b$}
+\blockmatrix{0.1in}{0.4in}{$+$}
+\fblockmatrix{0.1in}{0.525in}{$b_n$}
+\blockmatrix{0.1in}{0.375in}{\Huge{ $)$}}
+\\
+\\
+
+\begin{tabular}{llll}
+\fblockmatrix{0.5in}{0.5in}{A}&
+\fblockmatrix{0.1in}{0.5in}{x}&
+\blockmatrix{0.1in}{0.5in}{=}&
+\fblockmatrix{0.1in}{0.5in}{b}
+\\
+\fblockmatrix{0.5in}{0.25in}{G} & & &
+\fblockmatrix{0.1in}{0.25in}{0}
+\\
+\end{tabular}
+\\\\
+
+\end{document}
