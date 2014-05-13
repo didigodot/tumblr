@@ -53,7 +53,7 @@ We simply discretize the Fourier transform by changing the integral to a sum, ap
 $$X_k=\sum_{n=0}^{N-1}x_n e^{-2\pi i n \frac{k}{N}}.$$
 Note that the $\frac{k}{N}$ serves the same purpose as $\xi$ in the continuous case.\\
 The inverse is given by:
-$$ x_k = \frac{1}{N}\sum_{n=0}^{N-1}X_k e^{2\pi i n \frac{k}{N}}.$$
+$$ x_n = \frac{1}{N}\sum_{k=0}^{N-1}X_k e^{2\pi i n \frac{k}{N}}.$$
 \subsection{Matrix representation}
 The DFT, unsurprisingly, can be written as a matrix transformation.
 $$
