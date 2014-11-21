@@ -1,0 +1,36 @@
+
+\documentclass[11pt]{article}
+\usepackage[]{geometry} % see geometry.pdf on how to lay out the page. There's lots.
+\usepackage{amsthm}
+\usepackage{hyperref}
+\geometry{a4paper} % or letter or a5paper or ... etc
+% \geometry{landscape} % rotated page geometry
+
+% See the ``Article customise'' template for come common customisations
+
+\title{Lexemes, Lexicons and Lexicalization}
+\author{Didi Park}
+\date{21 November 2014}
+%%% BEGIN DOCUMENT
+\begin{document}
+
+\maketitle
+
+%%%%
+\section{Lexemes and Lexicons}
+Lexemes are the smallest lexical unit\footnote{similarly, phonemes are the smallest unit of meaningful sound in a language, and morphemes are the smallest units of meaning in a language}; they are independent of inflection. A lexeme can be thought of as the set of all forms of the lemma: ``eat'' can be thought of as a lemma, and ``ate,'' ``eats'', ``eaten,'' ``eater,'' are some of its lexemes. These words all have the same fundamental meaning, regardless of grammatical structure\footnote{the inflections `-s,' `-en,' `-er' are examples of morphemes, as they modify the grammatical meaning and structure of `eat'.}.
+
+In programming languages, the concept of lexemes is relevant: In the Java statement \begin{verbatim}private boolean = true;\end{verbatim} the parser must be able to differentiate between different meaningful units -- lexemes. The statement is thus split up into ``private,'' ``boolean'', ``=,'' and ``true'' by using whitespace as a separator.
+
+\section{Lexicons}
+Lexicons are collections of lexemes, and can more simply be thought of as the set of all words of a language. Each language has a different lexicon. Lexicons can be organized by its closed and open categories. Closed categories are rarely, if ever modified. Conjunctions are a good example: ``and,'' ``or,'' ``but,'' etc. are some of the most commonly used and functionally useful lexemes in our language. 
+
+\section{Lexicalization}
+Lexicalization is the process by which new words enter the lexicon.
+\subsection{}
+%%%%
+\section{Further reading/Works Cited}
+\begin{enumerate}
+\item Wikipedia. \url{http://en.wikipedia.org/wiki/Lexical_analysis}
+\end{enumerate}
+\end{document}
